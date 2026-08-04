@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sayfa Bulunamadı (404) | Gbots Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .error-container {
+      min-height: 80vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 120px 24px 60px 24px;
+    }
+    .error-code {
+      font-size: 7rem;
+      font-weight: 800;
+      line-height: 1;
+      background: var(--gradient-accent);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 16px;
+    }
+    .error-title {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+    .error-desc {
+      color: var(--text-muted);
+      max-width: 480px;
+      margin-bottom: 32px;
+      font-size: 1.05rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo">
+        <div class="logo-badge">G</div>
+        <span>Gbots Studio</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Ana Sayfa</a></li>
+        <li><a href="privacy.html">Gizlilik Politikası</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container error-container">
+    <div class="error-code">404</div>
+    <h1 class="error-title">Sayfa Bulunamadı</h1>
+    <p class="error-desc">Aradığınız web adresi taşınmış, silinmiş veya hiç var olmamış olabilir.</p>
+    <a href="index.html" class="btn-primary">
+      <i class="fa-solid fa-house"></i> Ana Sayfaya Dön
+    </a>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Gbots Studio. Tüm hakları saklıdır.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
