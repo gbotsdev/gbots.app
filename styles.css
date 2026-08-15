@@ -59,13 +59,24 @@ body {
 .brand-logo {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   text-decoration: none;
-  color: var(--text-main);
+  color: #ffffff; 
   font-weight: 700;
-  font-size: 1.35rem;
-  letter-spacing: -0.5px;
+  font-size: 1.3rem;
+  letter-spacing: -0.3px;
+  transition: opacity 0.2s ease;
 }
+
+.brand-logo:hover {
+  opacity: 0.9;
+}
+
+.brand-logo span {
+  /* Aktif */
+  color: var(--primary-mint-glow);
+}
+
 
 .logo-badge {
   background: var(--gradient-accent);
