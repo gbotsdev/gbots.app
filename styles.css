@@ -69,17 +69,25 @@ body {
 
 .logo-badge {
   background: var(--gradient-accent);
-  color: #121212;
   width: 38px;
   height: 38px;
   border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 800;
-  font-size: 1.1rem;
   box-shadow: 0 4px 14px var(--primary-mint-glow);
+  overflow: hidden; 
 }
+
+.logo-badge svg,
+.logo-badge img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; 
+  padding: 3px; 
+  box-sizing: border-box;
+}
+
 
 .nav-links {
   display: flex;
