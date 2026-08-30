@@ -23,8 +23,16 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=2.1">
   <style>
+    @media (min-width: 769px) {
+      .mobile-toggle, #mobileToggle {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+      }
+    }
     .legal-content {
       padding: 140px 0 80px 0;
       max-width: 860px;
@@ -90,7 +98,7 @@
       </a>
 
       <!-- Mobile Hamburger Button -->
-      <button class="mobile-toggle" id="mobileToggle" aria-label="Menüyü Aç/Kapat" aria-expanded="false">
+      <button class="mobile-toggle" id="mobileToggle" onclick="toggleMobileNav()" aria-label="Menüyü Aç/Kapat" aria-expanded="false">
         <i class="fa-solid fa-bars" id="toggleIcon"></i>
       </button>
 
@@ -152,14 +160,15 @@
 
   <!-- Interactive JavaScript for Mobile Navigation -->
   <script>
-    const mobileToggle = document.getElementById('mobileToggle');
-    const navLinks = document.getElementById('navLinks');
-    const toggleIcon = document.getElementById('toggleIcon');
+    function toggleMobileNav() {
+      const navLinks = document.getElementById('navLinks');
+      const mobileToggle = document.getElementById('mobileToggle');
+      const toggleIcon = document.getElementById('toggleIcon');
+      if (!navLinks) return;
 
-    if (mobileToggle && navLinks) {
-      mobileToggle.addEventListener('click', () => {
-        const isOpen = navLinks.classList.toggle('active');
-        mobileToggle.setAttribute('aria-expanded', isOpen);
+      const isOpen = navLinks.classList.toggle('active');
+      if (mobileToggle) mobileToggle.setAttribute('aria-expanded', isOpen);
+      if (toggleIcon) {
         if (isOpen) {
           toggleIcon.classList.remove('fa-bars');
           toggleIcon.classList.add('fa-xmark');
@@ -167,19 +176,40 @@
           toggleIcon.classList.remove('fa-xmark');
           toggleIcon.classList.add('fa-bars');
         }
-      });
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const navLinks = document.getElementById('navLinks');
+      const mobileToggle = document.getElementById('mobileToggle');
+      const toggleIcon = document.getElementById('toggleIcon');
 
       // Close menu when clicking on any nav link
-      navLinks.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
+      if (navLinks) {
+        navLinks.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            if (mobileToggle) mobileToggle.setAttribute('aria-expanded', 'false');
+            if (toggleIcon) {
+              toggleIcon.classList.remove('fa-xmark');
+              toggleIcon.classList.add('fa-bars');
+            }
+          });
+        });
+      }
+
+      // Close menu when clicking outside
+      document.addEventListener('click', (e) => {
+        if (navLinks && mobileToggle && !navLinks.contains(e.target) && !mobileToggle.contains(e.target) && navLinks.classList.contains('active')) {
           navLinks.classList.remove('active');
           mobileToggle.setAttribute('aria-expanded', 'false');
-          toggleIcon.classList.remove('fa-xmark');
-          toggleIcon.classList.add('fa-bars');
-        });
+          if (toggleIcon) {
+            toggleIcon.classList.remove('fa-xmark');
+            toggleIcon.classList.add('fa-bars');
+          }
+        }
       });
-    }
+    });
   </script>
-
 </body>
 </html>
