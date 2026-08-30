@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
- <!-- Google tag (gtag.js) -->
- <script async src="https://www.googletagmanager.com/gtag/js?id=G-J3KHKY1W8P"></script>
- <script>
-   window.dataLayer = window.dataLayer || [];
-   function gtag(){dataLayer.push(arguments);}
-   gtag('js', new Date());
- 
-   gtag('config', 'G-J3KHKY1W8P');
- </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-J3KHKY1W8P"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'G-J3KHKY1W8P');
+  </script>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>Gizlilik Politikası | Gbots Studio - Çek & Pişir</title>
   <meta name="description" content="Gbots Studio ve Çek & Pişir (Snap & Cook AI) mobil uygulaması gizlilik politikası bildirimi.">
   <link rel="icon" href="favicon.ico">
@@ -22,6 +22,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="styles.css">
   <style>
     .legal-content {
@@ -34,11 +35,13 @@
       border: 1px solid var(--border-color);
       border-radius: 24px;
       padding: 40px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
     }
     .legal-card h1 {
-      font-size: 2.2rem;
+      font-size: clamp(1.8rem, 4vw, 2.4rem);
       font-weight: 800;
       margin-bottom: 8px;
+      letter-spacing: -0.5px;
     }
     .legal-card .date {
       color: var(--primary-mint);
@@ -47,38 +50,60 @@
       margin-bottom: 32px;
     }
     .legal-card h2 {
-      font-size: 1.35rem;
+      font-size: 1.3rem;
       font-weight: 700;
       margin: 28px 0 12px 0;
       color: var(--text-main);
     }
     .legal-card p, .legal-card li {
       color: var(--text-muted);
-      font-size: 0.98rem;
-      line-height: 1.7;
+      font-size: 0.96rem;
+      line-height: 1.75;
       margin-bottom: 12px;
     }
     .legal-card ul {
       padding-left: 20px;
       margin-bottom: 16px;
     }
+
+    @media (max-width: 768px) {
+      .legal-content {
+        padding: 100px 0 50px 0;
+      }
+      .legal-card {
+        padding: 24px 18px;
+        border-radius: 18px;
+      }
+    }
   </style>
 </head>
 <body>
 
   <!-- Navigation -->
-  <nav class="navbar">
+  <nav class="navbar" id="navbar">
     <div class="container nav-container">
       <a href="index.html" class="brand-logo">
         <div class="logo-badge">
-         <img src="logo.svg" alt="Gbots Studio Logo">
+          <img src="logo.svg" alt="Gbots Studio Logo" width="36" height="36">
         </div>
-       <span>Gbots Studio</span>
+        <span>Gbots Studio</span>
       </a>
-      <ul class="nav-links">
-        <li><a href="index.html">Ana Sayfa</a></li>
-        <li><a href="index.html#apps">Uygulamalar</a></li>
+
+      <!-- Mobile Hamburger Button -->
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Menüyü Aç/Kapat" aria-expanded="false">
+        <i class="fa-solid fa-bars" id="toggleIcon"></i>
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html#hero">Ana Sayfa</a></li>
+        <li><a href="index.html#featured">Çek & Pişir</a></li>
+        <li><a href="index.html#features">Özellikler</a></li>
         <li><a href="privacy.html" style="color: var(--primary-mint);">Gizlilik Politikası</a></li>
+        <li>
+          <a href="https://play.google.com/store/apps/details?id=com.gbots.cekpisir" target="_blank" rel="noopener" class="btn-nav">
+            <i class="fa-brands fa-google-play"></i> Uygulamayı İndir
+          </a>
+        </li>
       </ul>
     </div>
   </nav>
@@ -86,7 +111,7 @@
   <main class="container legal-content">
     <div class="legal-card">
       <h1>Gizlilik Politikası</h1>
-      <div class="date">Son Güncelleme: 4 Ağustos 2026</div>
+      <div class="date">Son Güncelleme: 30 Ağustos 2026</div>
 
       <p><strong>Gbots Studio</strong> olarak, geliştirmiş olduğumuz <strong>Çek & Pişir (Snap & Cook AI)</strong> mobil uygulamasını kullanan tüm kullanıcılarımızın kişisel gizliliğine büyük önem vermekteyiz. Bu Gizlilik Politikası, uygulamamızı kullandığınızda verilerinizin nasıl toplandığını, kullanıldığını ve korunduğunu açıklamaktadır.</p>
 
@@ -94,7 +119,7 @@
       <p>Çek & Pişir uygulaması, kullanıcıların kayıt olmasını veya kişisel kimlik bilgilerini (ad, soyad, e-posta vb.) paylaşmasını <strong>gerektirmemektedir</strong>. Uygulama içinde işlenen veriler şunlardır:</p>
       <ul>
         <li><strong>Kamera ve Görsel Verileri:</strong> Uygulama içinden çektiğiniz veya galerinizden seçtiğiniz malzeme fotoğrafları, yalnızca Google Gemini AI yapay zeka servisine gönderilerek malzeme tanıma işlemi için işlenir. Fotoğraflarınız sunucularımızda saklanmaz veya üçüncü taraflarla paylaşılmaz.</li>
-        <li><strong>Yerel Uygulama Verileri:</strong> Favori tarifleriniz, gün gün tuttuğunuz kalori günlükleri ve kiler malzemeleriniz yalnızca cihazınızın yerel hafızasında (SharedPreferences) saklanır. Cihazınızdan dışarı aktarılmaz.</li>
+        <li><strong>Yerel Uygulama Verileri:</strong> Favori tarifleriniz, gün gün tuttuğunuz kalori ve su takip günlükleriniz ile kiler malzemeleriniz yalnızca cihazınızın yerel hafızasında (SharedPreferences) saklanır. Cihazınızdan dışarı aktarılmaz.</li>
       </ul>
 
       <h2>2. Kamera ve İzinler</h2>
@@ -103,8 +128,8 @@
       <h2>3. Yapay Zeka Servisleri (Google Gemini AI)</h2>
       <p>Çek & Pişir, malzeme analizi ve tarif üretimi gerçekleştirmek için güvenli Google Gemini API servisini kullanır. Yapay zekaya iletilen veriler yalnızca görseldeki yiyecek malzemelerinden ibarettir ve hiçbir kişisel veri içermez.</p>
 
-      <h2>4. Reklam Hizmetleri (Google AdMob)</h2>
-      <p>Uygulamamız ücretsiz olarak sunulduğundan hizmet kalitesini sürdürebilmek için Google AdMob reklam altyapısını kullanır. Google AdMob, kişiselleştirilmiş veya genel reklamlar sunmak amacıyla cihazınıza ait anonim reklam kimliklerini (Advertising ID) kullanabilir. Google'ın reklam gizlilik politikası hakkında daha fazla bilgi edinmek için <a href="https://policies.google.com/technologies/ads" target="_blank" style="color: var(--primary-mint);">Google Reklam Politikaları</a> sayfasını ziyaret edebilirsiniz.</p>
+      <h2>4. Reklam Hizmetleri (Unity Ads)</h2>
+      <p>Uygulamamız ücretsiz olarak sunulduğundan hizmet kalitesini sürdürebilmek için <strong>Unity Ads</strong> reklam altyapısını kullanır. Unity Ads, kişiselleştirilmiş veya genel video reklamlar sunmak amacıyla cihazınıza ait anonim reklam kimliklerini (Advertising ID / GAID) kullanabilir. Unity'nin gizlilik politikası hakkında daha fazla bilgi edinmek için <a href="https://unity.com/legal/privacy-policy" target="_blank" rel="noopener" style="color: var(--primary-mint);">Unity Gizlilik Politikası</a> sayfasını ziyaret edebilirsiniz.</p>
 
       <h2>5. Çocukların Gizliliği</h2>
       <p>Uygulamamız 13 yaşın altındaki çocuklardan bilerek hiçbir kişisel veri toplamaz. Uygulamamız genel kullanıma ve aile fertlerine uygundur.</p>
@@ -124,6 +149,37 @@
       <p>&copy; 2026 Gbots Studio. Tüm hakları saklıdır.</p>
     </div>
   </footer>
+
+  <!-- Interactive JavaScript for Mobile Navigation -->
+  <script>
+    const mobileToggle = document.getElementById('mobileToggle');
+    const navLinks = document.getElementById('navLinks');
+    const toggleIcon = document.getElementById('toggleIcon');
+
+    if (mobileToggle && navLinks) {
+      mobileToggle.addEventListener('click', () => {
+        const isOpen = navLinks.classList.toggle('active');
+        mobileToggle.setAttribute('aria-expanded', isOpen);
+        if (isOpen) {
+          toggleIcon.classList.remove('fa-bars');
+          toggleIcon.classList.add('fa-xmark');
+        } else {
+          toggleIcon.classList.remove('fa-xmark');
+          toggleIcon.classList.add('fa-bars');
+        }
+      });
+
+      // Close menu when clicking on any nav link
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          navLinks.classList.remove('active');
+          mobileToggle.setAttribute('aria-expanded', 'false');
+          toggleIcon.classList.remove('fa-xmark');
+          toggleIcon.classList.add('fa-bars');
+        });
+      });
+    }
+  </script>
 
 </body>
 </html>
