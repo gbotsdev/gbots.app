@@ -30,6 +30,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 84px; /* Sabit navbar'ın bölüm başlıklarını kapatmasını önler */
   font-family: var(--font-family);
   background-color: var(--bg-primary);
   color: var(--text-main);
@@ -41,6 +42,16 @@ body {
   overflow-x: hidden;
   position: relative;
   background-color: var(--bg-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Erişilebilirlik: Klavye ile gezinme odağı */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--primary-mint);
+  outline-offset: 4px;
+  border-radius: 4px;
 }
 
 /* ── Container ── */
@@ -193,6 +204,7 @@ body {
   left: 70%;
   width: 450px;
   height: 450px;
+  max-width: 80vw;
   background: radial-gradient(circle, rgba(255, 140, 55, 0.1) 0%, rgba(13, 15, 18, 0) 70%);
   pointer-events: none;
   z-index: 0;
@@ -231,6 +243,7 @@ body {
 .hero-title span {
   background: var(--gradient-accent);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -346,10 +359,12 @@ body {
   flex-shrink: 0;
 }
 
+.app-info h2,
 .app-info h3 {
   font-size: 1.85rem;
   font-weight: 800;
   letter-spacing: -0.5px;
+  line-height: 1.2;
 }
 
 .app-info p {
@@ -613,6 +628,9 @@ body {
   text-decoration: none;
   font-size: 0.9rem;
   transition: color 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .footer-links a:hover {
@@ -770,6 +788,7 @@ body {
     border-radius: 14px;
   }
 
+  .app-info h2,
   .app-info h3 {
     font-size: 1.5rem;
   }
@@ -792,5 +811,19 @@ body {
 
   .card {
     padding: 24px 20px;
+  }
+}
+
+/* Hareket hassasiyeti olan kullanıcılar için animasyonları yumuşatır */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
