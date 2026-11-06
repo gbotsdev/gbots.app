@@ -12,18 +12,45 @@
   </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>Gbots Studio | Yapay Zeka Destekli Mobil Uygulamalar</title>
-  <meta name="description" content="Gbots Studio - Çek & Pişir (Snap & Cook AI) ve modern mobil uygulamalar geliştirici stüdyosu.">
+  
+  <!-- Optimize Edilmiş SEO Başlık ve Açıklama -->
+  <title>Çek & Pişir - Yapay Zeka Yemek Tarifi ve Kalori Asistanı | Gbots Studio</title>
+  <meta name="description" content="Buzdolabındaki malzemelerin fotoğrafını çekin, Gemini AI destekli Çek & Pişir saniyeler içinde pratik yemek tarifleri üretsin. Kalori, makro ve su takibi tek uygulamada!">
+  <meta name="keywords" content="çek ve pişir, yapay zeka yemek tarifi, buzdolabındaki malzemelerle yemek, kalori takibi, makro hesaplama, su hatırlatıcı, gemini ai yemek asistanı, gbots studio">
+  <meta name="author" content="Gbots Studio">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#00C897">
+  <link rel="canonical" href="https://gbots.app/">
+
+  <!-- Open Graph / Sosyal Medya Paylaşım Etiketleri -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="tr_TR">
+  <meta property="og:url" content="https://gbots.app/">
+  <meta property="og:site_name" content="Gbots Studio">
+  <meta property="og:title" content="Çek & Pişir | Yapay Zeka Destekli Mutfak ve Kalori Asistanı">
+  <meta property="og:description" content="Evdeki malzemelerin fotoğrafını çekin, Gemini AI anında lezzetli tarifler üretsin. Eller serbest pişirme modu ve kalori günlüğü bir arada!">
+  <meta property="og:image" content="https://gbots.app/apple-touch-icon.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Çek & Pişir | Yapay Zeka Yemek Tarifi ve Kalori Takibi">
+  <meta name="twitter:description" content="Buzdolabındaki malzemeleri fotoğrafla, anında kişiselleştirilmiş tarifler al.">
+  <meta name="twitter:image" content="https://gbots.app/apple-touch-icon.png">
+
+  <!-- Faviconlar -->
   <link rel="icon" href="favicon.ico">
   <link rel="icon" href="favicon.png" type="image/png" sizes="32x32">
   <link rel="icon" href="favicon.png" type="image/png" sizes="48x48">
   <link rel="icon" href="favicon.svg" type="image/svg+xml" sizes="any">
   <link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180">
+
+  <!-- Fontlar ve Stiller -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="styles.css?v=2.1">
+
   <style>
     @media (min-width: 769px) {
       .mobile-toggle, #mobileToggle {
@@ -33,194 +60,241 @@
         pointer-events: none !important;
       }
     }
+    .app-info h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin: 0;
+      line-height: 1.2;
+    }
   </style>
+
+  <!-- Schema.org Yapılandırılmış Veri (Mobil Uygulama + Organizasyon) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "name": "Gbots Studio",
+        "url": "https://gbots.app/",
+        "logo": "https://gbots.app/logo.svg",
+        "email": "contact@gbots.app",
+        "sameAs": [
+          "https://www.instagram.com/gbotsstudio",
+          "https://www.facebook.com/gbotsstudio/"
+        ]
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "Çek & Pişir - Snap & Cook AI Assistant",
+        "operatingSystem": "Android",
+        "applicationCategory": "FoodAndDrinkApplication",
+        "description": "Buzdolabınızdaki malzemelerin fotoğrafını çekin, Gemini AI anında lezzetli ve pratik yemek tarifleri üretsin. Kalori takibi, su hatırlatıcı ve eller serbest pişirme modu tek bir uygulamada.",
+        "installUrl": "https://play.google.com/store/apps/details?id=com.gbots.cekpisir",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "TRY"
+        },
+        "author": {
+          "@type": "Organization",
+          "name": "Gbots Studio"
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
   <!-- Navbar -->
-  <nav class="navbar" id="navbar">
-    <div class="container nav-container">
-      <a href="index.html" class="brand-logo">
-        <div class="logo-badge">
-          <img src="logo.svg" alt="Gbots Studio Logo" width="36" height="36">
+  <header>
+    <nav class="navbar" id="navbar" aria-label="Ana Menü">
+      <div class="container nav-container">
+        <a href="index.html" class="brand-logo">
+          <div class="logo-badge">
+            <img src="logo.svg" alt="Gbots Studio - Yapay Zeka Mobil Uygulama Stüdyosu Logosu" width="36" height="36">
+          </div>
+          <span>Gbots Studio</span>
+        </a>
+
+        <!-- Mobile Hamburger Button (Only visible on Mobile <= 768px) -->
+        <button class="mobile-toggle" id="mobileToggle" onclick="toggleMobileNav()" aria-label="Menüyü Aç/Kapat" aria-expanded="false">
+          <i class="fa-solid fa-bars" id="toggleIcon" aria-hidden="true"></i>
+        </button>
+
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#hero">Ana Sayfa</a></li>
+          <li><a href="#featured">Çek & Pişir</a></li>
+          <li><a href="#features">Özellikler</a></li>
+          <li><a href="privacy.html">Gizlilik Politikası</a></li>
+          <li>
+            <a href="https://play.google.com/store/apps/details?id=com.gbots.cekpisir" target="_blank" rel="noopener" class="btn-nav">
+              <i class="fa-brands fa-google-play" aria-hidden="true"></i> Uygulamayı İndir
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+      <div class="hero-glow"></div>
+      <div class="hero-glow-secondary"></div>
+      <div class="container hero-content">
+        <div class="tag-badge">
+          <i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i> Yapay Zeka Destekli Akıllı Çözümler
         </div>
-        <span>Gbots Studio</span>
-      </a>
-
-      <!-- Mobile Hamburger Button (Only visible on Mobile <= 768px) -->
-      <button class="mobile-toggle" id="mobileToggle" onclick="toggleMobileNav()" aria-label="Menüyü Aç/Kapat" aria-expanded="false">
-        <i class="fa-solid fa-bars" id="toggleIcon"></i>
-      </button>
-
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#hero">Ana Sayfa</a></li>
-        <li><a href="#featured">Çek & Pişir</a></li>
-        <li><a href="#features">Özellikler</a></li>
-        <li><a href="privacy.html">Gizlilik Politikası</a></li>
-        <li>
-          <a href="https://play.google.com/store/apps/details?id=com.gbots.cekpisir" target="_blank" rel="noopener" class="btn-nav">
-            <i class="fa-brands fa-google-play"></i> Uygulamayı İndir
-          </a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-
-  <!-- Hero Section -->
-  <section id="hero" class="hero">
-    <div class="hero-glow"></div>
-    <div class="hero-glow-secondary"></div>
-    <div class="container hero-content">
-      <div class="tag-badge">
-        <i class="fa-solid fa-wand-magic-sparkles"></i> Yapay Zeka Destekli Akıllı Çözümler
-      </div>
-      <h1 class="hero-title">
-        Geleceğin Mobil Deneyimlerini <span>Gbots</span> İle Keşfedin.
-      </h1>
-      <p class="hero-subtitle">
-        Yapay zeka gücünü gündelik yaşamın pratik ihtiyaçlarıyla buluşturuyoruz. Mutfakta ne pişireceğinizi düşünmeye son veren akıllı asistanlar geliştiriyoruz.
-      </p>
-      <div class="hero-cta">
-        <a href="https://play.google.com/store/apps/details?id=com.gbots.cekpisir" target="_blank" rel="noopener" class="btn-primary">
-          <i class="fa-brands fa-google-play"></i> Google Play'de Keşfet
-        </a>
-        <a href="#featured" class="btn-secondary">
-          <i class="fa-solid fa-circle-info"></i> Çek & Pişir'i İncele
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Featured App Section -->
-  <section id="featured" class="featured-section">
-    <div class="container">
-      <div class="featured-card">
-        <div class="card-content">
-          <div class="app-meta">
-            <div class="app-icon">🍳</div>
-            <div class="app-info">
-              <h3>Çek & Pişir</h3>
-              <p>Snap & Cook AI Assistant</p>
-            </div>
-          </div>
-          <p class="app-desc">
-            Buzdolabınızdaki malzemelerin fotoğrafını çekin, Gemini AI anında lezzetli ve pratik yemek tarifleri üretsin. Kalori takibi, su hatırlatıcı ve eller serbest pişirme modu tek bir uygulamada!
-          </p>
-
-          <div class="features-list">
-            <div class="feature-item">
-              <i class="fa-solid fa-camera"></i> Anlık Kamera Analizi
-            </div>
-            <div class="feature-item">
-              <i class="fa-solid fa-fire-flame-curved"></i> Kalori & Makro Günlüğü
-            </div>
-            <div class="feature-item">
-              <i class="fa-solid fa-kitchen-set"></i> Eller Serbest Pişirme Modu
-            </div>
-            <div class="feature-item">
-              <i class="fa-solid fa-droplet"></i> Günlük 8 Bardak Su Takibi
-            </div>
-            <div class="feature-item">
-              <i class="fa-solid fa-wheat-awn-circle-exclamation"></i> Alerjen & Diyet Filtresi
-            </div>
-            <div class="feature-item">
-              <i class="fa-solid fa-utensils"></i> Dinamik Porsiyon Ölçekleme
-            </div>
-          </div>
-
+        <h1 class="hero-title">
+          Geleceğin Mobil Deneyimlerini <span>Gbots</span> İle Keşfedin.
+        </h1>
+        <p class="hero-subtitle">
+          Yapay zeka gücünü gündelik yaşamın pratik ihtiyaçlarıyla buluşturuyoruz. Mutfakta ne pişireceğinizi düşünmeye son veren akıllı asistanlar geliştiriyoruz.
+        </p>
+        <div class="hero-cta">
           <a href="https://play.google.com/store/apps/details?id=com.gbots.cekpisir" target="_blank" rel="noopener" class="btn-primary">
-            <i class="fa-brands fa-google-play"></i> Google Play'den İndir
+            <i class="fa-brands fa-google-play" aria-hidden="true"></i> Google Play'de Keşfet
+          </a>
+          <a href="#featured" class="btn-secondary">
+            <i class="fa-solid fa-circle-info" aria-hidden="true"></i> Çek & Pişir'i İncele
           </a>
         </div>
+      </div>
+    </section>
 
-        <div class="mockup-wrapper">
-          <div class="mockup-phone">
-            <div class="mockup-notch"></div>
-            <div class="mockup-header">
-              <h4>Çek & Pişir AI</h4>
-              <span class="badge-green">Kalan Hak: 7/7</span>
-            </div>
-            <div class="mockup-item">
-              <div class="mockup-item-icon">📸</div>
-              <div class="mockup-item-text">
-                <h5>Malzemeleri Çek</h5>
-                <p>Tavuk, Domates, Biber algılandı</p>
+    <!-- Featured App Section -->
+    <section id="featured" class="featured-section">
+      <div class="container">
+        <div class="featured-card">
+          <div class="card-content">
+            <div class="app-meta">
+              <div class="app-icon" aria-hidden="true">🍳</div>
+              <div class="app-info">
+                <h2>Çek & Pişir</h2>
+                <p>Snap & Cook AI Assistant</p>
               </div>
             </div>
-            <div class="mockup-item">
-              <div class="mockup-item-icon">✨</div>
-              <div class="mockup-item-text">
-                <h5>Sebzeli Tavuk Sote</h5>
-                <p>25 Dakika • Kolay • 420 kcal</p>
+            <p class="app-desc">
+              Buzdolabınızdaki malzemelerin fotoğrafını çekin, Gemini AI anında lezzetli ve pratik yemek tarifleri üretsin. Kalori takibi, su hatırlatıcı ve eller serbest pişirme modu tek bir uygulamada!
+            </p>
+
+            <div class="features-list">
+              <div class="feature-item">
+                <i class="fa-solid fa-camera" aria-hidden="true"></i> Anlık Kamera Analizi
+              </div>
+              <div class="feature-item">
+                <i class="fa-solid fa-fire-flame-curved" aria-hidden="true"></i> Kalori & Makro Günlüğü
+              </div>
+              <div class="feature-item">
+                <i class="fa-solid fa-kitchen-set" aria-hidden="true"></i> Eller Serbest Pişirme Modu
+              </div>
+              <div class="feature-item">
+                <i class="fa-solid fa-droplet" aria-hidden="true"></i> Günlük 8 Bardak Su Takibi
+              </div>
+              <div class="feature-item">
+                <i class="fa-solid fa-wheat-awn-circle-exclamation" aria-hidden="true"></i> Alerjen & Diyet Filtresi
+              </div>
+              <div class="feature-item">
+                <i class="fa-solid fa-utensils" aria-hidden="true"></i> Dinamik Porsiyon Ölçekleme
               </div>
             </div>
-            <div class="mockup-item">
-              <div class="mockup-item-icon">💧</div>
-              <div class="mockup-item-text">
-                <h5>Günlük Su Takibi</h5>
-                <p>8 / 8 Bardak Tamamlandı! 🎉</p>
+
+            <a href="https://play.google.com/store/apps/details?id=com.gbots.cekpisir" target="_blank" rel="noopener" class="btn-primary">
+              <i class="fa-brands fa-google-play" aria-hidden="true"></i> Google Play'den İndir
+            </a>
+          </div>
+
+          <div class="mockup-wrapper" aria-hidden="true">
+            <div class="mockup-phone">
+              <div class="mockup-notch"></div>
+              <div class="mockup-header">
+                <h4>Çek & Pişir AI</h4>
+                <span class="badge-green">Kalan Hak: 7/7</span>
               </div>
-            </div>
-            <div class="mockup-item">
-              <div class="mockup-item-icon">🍳</div>
-              <div class="mockup-item-text">
-                <h5>Pişirme Modu</h5>
-                <p>Ekran Kapanmaz • Adım 1/4</p>
+              <div class="mockup-item">
+                <div class="mockup-item-icon">📸</div>
+                <div class="mockup-item-text">
+                  <h5>Malzemeleri Çek</h5>
+                  <p>Tavuk, Domates, Biber algılandı</p>
+                </div>
+              </div>
+              <div class="mockup-item">
+                <div class="mockup-item-icon">✨</div>
+                <div class="mockup-item-text">
+                  <h5>Sebzeli Tavuk Sote</h5>
+                  <p>25 Dakika • Kolay • 420 kcal</p>
+                </div>
+              </div>
+              <div class="mockup-item">
+                <div class="mockup-item-icon">💧</div>
+                <div class="mockup-item-text">
+                  <h5>Günlük Su Takibi</h5>
+                  <p>8 / 8 Bardak Tamamlandı! 🎉</p>
+                </div>
+              </div>
+              <div class="mockup-item">
+                <div class="mockup-item-icon">🍳</div>
+                <div class="mockup-item-text">
+                  <h5>Pişirme Modu</h5>
+                  <p>Ekran Kapanmaz • Adım 1/4</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Features Grid Section -->
-  <section id="features" class="features-section">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Neden Çek & Pişir?</h2>
-        <p class="section-subtitle">Mutfakta zaman kazandıran, israfı önleyen ve sağlıklı beslenmenizi kolaylaştıran akıllı teknolojiler.</p>
+    <!-- Features Grid Section -->
+    <section id="features" class="features-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Neden Çek & Pişir?</h2>
+          <p class="section-subtitle">Mutfakta zaman kazandıran, israfı önleyen ve sağlıklı beslenmenizi kolaylaştıran akıllı teknolojiler.</p>
+        </div>
+
+        <div class="grid-features">
+          <div class="card">
+            <div class="card-icon"><i class="fa-solid fa-brain" aria-hidden="true"></i></div>
+            <h3>Gemini AI Görsel Gücü</h3>
+            <p>Gelişmiş görsel işleme modellerimiz sayesinde buzdolabınızdaki malzemeleri saniyeler içinde doğru şekilde tespit eder ve en uygun tarifleri üretir.</p>
+          </div>
+
+          <div class="card">
+            <div class="card-icon orange"><i class="fa-solid fa-kitchen-set" aria-hidden="true"></i></div>
+            <h3>Eller Serbest Pişirme Modu</h3>
+            <p>Yemek yaparken elleriniz ıslak veya yağlıyken telefon ekranınız asla kapanmaz; dev puntolarla adım adım talimatları kolayca takip edebilirsiniz.</p>
+          </div>
+
+          <div class="card">
+            <div class="card-icon"><i class="fa-solid fa-droplet" aria-hidden="true"></i></div>
+            <h3>Su & Kalori Takipçisi</h3>
+            <p>Günlük 8 bardak su hedefinizi interaktif olarak takip edin, aldığınız kalori ve makroları (protein, karb, yağ) dairesel grafiklerle görüntüleyin.</p>
+          </div>
+
+          <div class="card">
+            <div class="card-icon orange"><i class="fa-solid fa-person-walking" aria-hidden="true"></i></div>
+            <h3>Akıllı Sağlık Tavsiyeleri</h3>
+            <p>Kalori hedefinizi aştığınızda sizi suçlamayan; hafif yürüyüş, bitki çayı veya hafif egzersiz gibi seviyenize özel motive edici tavsiye kartları sunar.</p>
+          </div>
+
+          <div class="card">
+            <div class="card-icon"><i class="fa-solid fa-book-bookmark" aria-hidden="true"></i></div>
+            <h3>Çevrimdışı Tarif Defteri</h3>
+            <p>En sevdiğiniz tarifleri tek tıkla defterinize kaydedin; internet bağlantınız olmasa dahi dilediğiniz an tariflerinizi açıp pişirmeye devam edin.</p>
+          </div>
+
+          <div class="card">
+            <div class="card-icon"><i class="fa-solid fa-sliders" aria-hidden="true"></i></div>
+            <h3>Kiler & Alerjen Yönetimi</h3>
+            <p>Tuz, zeytinyağı gibi temel malzemelerinizi kilerinize ekleyin; Vegan, Glutensiz, Laktozsuz gibi diyet filtreleriyle tam size göre tarifler bulun.</p>
+          </div>
+        </div>
       </div>
-
-      <div class="grid-features">
-        <div class="card">
-          <div class="card-icon"><i class="fa-solid fa-brain"></i></div>
-          <h3>Gemini AI Görsel Gücü</h3>
-          <p>Gelişmiş görsel işleme modellerimiz sayesinde buzdolabınızdaki malzemeleri saniyeler içinde doğru şekilde tespit eder ve en uygun tarifleri üretir.</p>
-        </div>
-
-        <div class="card">
-          <div class="card-icon orange"><i class="fa-solid fa-kitchen-set"></i></div>
-          <h3>Eller Serbest Pişirme Modu</h3>
-          <p>Yemek yaparken elleriniz ıslak veya yağlıyken telefon ekranınız asla kapanmaz; dev puntolarla adım adım talimatları kolayca takip edebilirsiniz.</p>
-        </div>
-
-        <div class="card">
-          <div class="card-icon"><i class="fa-solid fa-droplet"></i></div>
-          <h3>Su & Kalori Takipçisi</h3>
-          <p>Günlük 8 bardak su hedefinizi interaktif olarak takip edin, aldığınız kalori ve makroları (protein, karb, yağ) dairesel grafiklerle görüntüleyin.</p>
-        </div>
-
-        <div class="card">
-          <div class="card-icon orange"><i class="fa-solid fa-person-walking"></i></div>
-          <h3>Akıllı Sağlık Tavsiyeleri</h3>
-          <p>Kalori hedefinizi aştığınızda sizi suçlamayan; hafif yürüyüş, bitki çayı veya hafif egzersiz gibi seviyenize özel motive edici tavsiye kartları sunar.</p>
-        </div>
-
-        <div class="card">
-          <div class="card-icon"><i class="fa-solid fa-book-bookmark"></i></div>
-          <h3>Çevrimdışı Tarif Defteri</h3>
-          <p>En sevdiğiniz tarifleri tek tıkla defterinize kaydedin; internet bağlantınız olmasa dahi dilediğiniz an tariflerinizi açıp pişirmeye devam edin.</p>
-        </div>
-
-        <div class="card">
-          <div class="card-icon"><i class="fa-solid fa-sliders"></i></div>
-          <h3>Kiler & Alerjen Yönetimi</h3>
-          <p>Tuz, zeytinyağı gibi temel malzemelerinizi kilerinize ekleyin; Vegan, Glutensiz, Laktozsuz gibi diyet filtreleriyle tam size göre tarifler bulun.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <!-- Footer -->
   <footer class="footer">
@@ -241,10 +315,10 @@
       <div class="footer-links">
         <h5>İletişim & Destek</h5>
         <ul>
-          <li><a href="mailto:contact@gbots.app"><i class="fa-solid fa-envelope"></i> contact@gbots.app</a></li>
-          <li><a href="https://play.google.com/store/apps/details?id=com.gbots.cekpisir" target="_blank" rel="noopener"><i class="fa-brands fa-google-play"></i> Google Play Store</a></li>
-         <li><a href="https://www.instagram.com/gbotsstudio"><i class="fa-brands fa-instagram"></i> @gbotsstudio</a></li>
-         <li><a href="https://www.facebook.com/gbotsstudio/"><i class="fa-brands fa-facebook"></i> Gbots Studio</a></li>
+          <li><a href="mailto:contact@gbots.app"><i class="fa-solid fa-envelope" aria-hidden="true"></i> contact@gbots.app</a></li>
+          <li><a href="https://play.google.com/store/apps/details?id=com.gbots.cekpisir" target="_blank" rel="noopener"><i class="fa-brands fa-google-play" aria-hidden="true"></i> Google Play Store</a></li>
+          <li><a href="https://www.instagram.com/gbotsstudio" target="_blank" rel="noopener"><i class="fa-brands fa-instagram" aria-hidden="true"></i> @gbotsstudio</a></li>
+          <li><a href="https://www.facebook.com/gbotsstudio/" target="_blank" rel="noopener"><i class="fa-brands fa-facebook" aria-hidden="true"></i> Gbots Studio</a></li>
         </ul>
       </div>
     </div>
