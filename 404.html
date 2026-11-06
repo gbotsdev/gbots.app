@@ -2,14 +2,35 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>Sayfa Bulunamadı (404) | Gbots Studio</title>
+  <meta name="description" content="Aradığınız sayfa bulunamadı. Gbots Studio ana sayfasına dönerek Çek & Pişir uygulamasını keşfedebilirsiniz.">
+  <!-- 404 sayfalarının arama sonuçlarında indeks almaması için kritik kural -->
+  <meta name="robots" content="noindex, follow">
+  <meta name="theme-color" content="#00C897">
+
+  <!-- Kök dizin (/) bağlantılı Faviconlar (Alt kırılım URL hatalarında bozulmaması için) -->
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" href="/favicon.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="/favicon.png" type="image/png" sizes="48x48">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" sizes="any">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="styles.css?v=2.1">
+  <link rel="stylesheet" href="/styles.css?v=2.2">
+
   <style>
+    @media (min-width: 769px) {
+      .mobile-toggle, #mobileToggle {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+      }
+    }
     .error-container {
       min-height: 80vh;
       display: flex;
@@ -20,16 +41,17 @@
       padding: 120px 24px 60px 24px;
     }
     .error-code {
-      font-size: 7rem;
+      font-size: clamp(5rem, 15vw, 7.5rem);
       font-weight: 800;
       line-height: 1;
       background: var(--gradient-accent);
       -webkit-background-clip: text;
+      background-clip: text;
       -webkit-text-fill-color: transparent;
       margin-bottom: 16px;
     }
     .error-title {
-      font-size: 2rem;
+      font-size: clamp(1.5rem, 4vw, 2rem);
       font-weight: 700;
       margin-bottom: 16px;
     }
@@ -44,27 +66,41 @@
 <body>
 
   <!-- Navigation -->
-  <nav class="navbar">
-    <div class="container nav-container">
-      <a href="index.html" class="brand-logo">
-        <div class="logo-badge">
-          <img src="logo.svg" alt="Gbots Studio Logo" width="36" height="36">
-        </div>
-        <span>Gbots Studio</span>
-      </a>
-      <ul class="nav-links">
-        <li><a href="index.html">Ana Sayfa</a></li>
-        <li><a href="privacy.html">Gizlilik Politikası</a></li>
-      </ul>
-    </div>
-  </nav>
+  <header>
+    <nav class="navbar" id="navbar" aria-label="Ana Menü">
+      <div class="container nav-container">
+        <a href="/" class="brand-logo">
+          <div class="logo-badge">
+            <img src="/logo.svg" alt="Gbots Studio Logosu" width="36" height="36">
+          </div>
+          <span>Gbots Studio</span>
+        </a>
+
+        <!-- Mobile Hamburger Button -->
+        <button class="mobile-toggle" id="mobileToggle" onclick="toggleMobileNav()" aria-label="Menüyü Aç/Kapat" aria-expanded="false">
+          <i class="fa-solid fa-bars" id="toggleIcon" aria-hidden="true"></i>
+        </button>
+
+        <ul class="nav-links" id="navLinks">
+          <li><a href="/">Ana Sayfa</a></li>
+          <li><a href="/#featured">Çek & Pişir</a></li>
+          <li><a href="/privacy.html">Gizlilik Politikası</a></li>
+          <li>
+            <a href="https://play.google.com/store/apps/details?id=com.gbots.cekpisir" target="_blank" rel="noopener" class="btn-nav">
+              <i class="fa-brands fa-google-play" aria-hidden="true"></i> Uygulamayı İndir
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
 
   <main class="container error-container">
-    <div class="error-code">404</div>
+    <div class="error-code" aria-hidden="true">404</div>
     <h1 class="error-title">Sayfa Bulunamadı</h1>
     <p class="error-desc">Aradığınız web adresi taşınmış, silinmiş veya hiç var olmamış olabilir.</p>
-    <a href="index.html" class="btn-primary">
-      <i class="fa-solid fa-house"></i> Ana Sayfaya Dön
+    <a href="/" class="btn-primary">
+      <i class="fa-solid fa-house" aria-hidden="true"></i> Ana Sayfaya Dön
     </a>
   </main>
 
@@ -74,5 +110,26 @@
     </div>
   </footer>
 
+  <!-- Interactive JavaScript for Mobile Navigation -->
+  <script>
+    function toggleMobileNav() {
+      const navLinks = document.getElementById('navLinks');
+      const mobileToggle = document.getElementById('mobileToggle');
+      const toggleIcon = document.getElementById('toggleIcon');
+      if (!navLinks) return;
+
+      const isOpen = navLinks.classList.toggle('active');
+      if (mobileToggle) mobileToggle.setAttribute('aria-expanded', isOpen);
+      if (toggleIcon) {
+        if (isOpen) {
+          toggleIcon.classList.remove('fa-bars');
+          toggleIcon.classList.add('fa-xmark');
+        } else {
+          toggleIcon.classList.remove('fa-xmark');
+          toggleIcon.classList.add('fa-bars');
+        }
+      }
+    }
+  </script>
 </body>
 </html>
