@@ -111,25 +111,48 @@
       padding: 72px 0 36px;
       position: relative;
     }
+    .carousel-wrapper {
+      position: relative;
+      margin-top: 32px;
+      display: flex;
+      align-items: center;
+    }
     .screenshots-track {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 22px;
-      margin-top: 36px;
+      display: flex;
+      gap: 24px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      padding: 16px 8px 24px;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+      width: 100%;
+    }
+    .screenshots-track::-webkit-scrollbar {
+      display: none;
     }
     .screenshot-card {
-      background: rgba(22, 32, 29, 0.72);
-      border: 1px solid rgba(0, 200, 151, 0.22);
-      border-radius: 22px;
+      flex: 0 0 280px;
+      scroll-snap-align: center;
+      background: rgba(22, 32, 29, 0.78);
+      border: 1px solid rgba(0, 200, 151, 0.25);
+      border-radius: 24px;
       padding: 12px;
       transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
       display: flex;
       flex-direction: column;
       align-items: center;
+      user-select: none;
+    }
+    @media (max-width: 600px) {
+      .screenshot-card {
+        flex: 0 0 78%;
+        max-width: 290px;
+      }
     }
     .screenshot-card:hover {
       transform: translateY(-6px);
-      border-color: rgba(0, 200, 151, 0.6);
+      border-color: rgba(0, 200, 151, 0.65);
       box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
     }
     .screenshot-card img {
@@ -137,6 +160,65 @@
       height: auto;
       border-radius: 16px;
       display: block;
+      pointer-events: none;
+    }
+    .carousel-btn {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: rgba(18, 28, 25, 0.92);
+      border: 1px solid rgba(0, 200, 151, 0.45);
+      color: #00C897;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 1.1rem;
+      transition: all 0.25s ease;
+      flex-shrink: 0;
+      z-index: 5;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    }
+    .carousel-btn:hover {
+      background: #00C897;
+      color: #091310;
+      transform: scale(1.08);
+    }
+    .carousel-btn.prev {
+      margin-right: 12px;
+    }
+    .carousel-btn.next {
+      margin-left: 12px;
+    }
+    @media (max-width: 600px) {
+      .carousel-btn {
+        width: 38px;
+        height: 38px;
+        font-size: 0.95rem;
+      }
+      .carousel-btn.prev { margin-right: 6px; }
+      .carousel-btn.next { margin-left: 6px; }
+    }
+    .carousel-dots {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      margin-top: 8px;
+    }
+    .carousel-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.22);
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .carousel-dot.active {
+      width: 28px;
+      background: #00C897;
     }
   </style>
 
@@ -311,25 +393,44 @@
           <p class="section-subtitle">Fotoğraftan tarif üretiminden canlı Şefe Danış sohbetine, el sallayarak temassız pişirmeden kalori sihirbazına kadar tüm deneyimi keşfedin.</p>
         </div>
 
-        <div class="screenshots-track">
-          <div class="screenshot-card">
-            <img src="screenshots/screenshot1.png" alt="Çek & Pişir - Fotoğrafı Çek, Yapay Zeka Tarif Üretsin" width="330" height="717" loading="lazy">
+        <div class="carousel-wrapper">
+          <button class="carousel-btn prev" onclick="scrollScreenshots(-1)" aria-label="Önceki Ekran">
+            <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+          </button>
+
+          <div class="screenshots-track" id="screenshotsTrack">
+            <div class="screenshot-card">
+              <img src="screenshots/screenshot1.png" alt="Çek & Pişir - Fotoğrafı Çek, Yapay Zeka Tarif Üretsin" width="330" height="717" loading="lazy">
+            </div>
+            <div class="screenshot-card">
+              <img src="screenshots/screenshot2.png" alt="Çek & Pişir - Püf Noktalarıyla Adım Adım Tarifler" width="330" height="717" loading="lazy">
+            </div>
+            <div class="screenshot-card">
+              <img src="screenshots/screenshot3.png" alt="Çek & Pişir - Şefe Danış: Tarif İçinde Canlı Sohbet" width="330" height="717" loading="lazy">
+            </div>
+            <div class="screenshot-card">
+              <img src="screenshots/screenshot4.png" alt="Çek & Pişir - El Sallayarak Temassız & Sesli Pişirme Modu" width="330" height="717" loading="lazy">
+            </div>
+            <div class="screenshot-card">
+              <img src="screenshots/screenshot5.png" alt="Çek & Pişir - Akıllı Alışveriş Listesi ve 9:16 Hikaye Kartı" width="330" height="717" loading="lazy">
+            </div>
+            <div class="screenshot-card">
+              <img src="screenshots/screenshot6.png" alt="Çek & Pişir - Kalori & Makro Sihirbazı ve Su Takibi" width="330" height="717" loading="lazy">
+            </div>
           </div>
-          <div class="screenshot-card">
-            <img src="screenshots/screenshot2.png" alt="Çek & Pişir - Püf Noktalarıyla Adım Adım Tarifler" width="330" height="717" loading="lazy">
-          </div>
-          <div class="screenshot-card">
-            <img src="screenshots/screenshot3.png" alt="Çek & Pişir - Şefe Danış: Tarif İçinde Canlı Sohbet" width="330" height="717" loading="lazy">
-          </div>
-          <div class="screenshot-card">
-            <img src="screenshots/screenshot4.png" alt="Çek & Pişir - El Sallayarak Temassız & Sesli Pişirme Modu" width="330" height="717" loading="lazy">
-          </div>
-          <div class="screenshot-card">
-            <img src="screenshots/screenshot5.png" alt="Çek & Pişir - Akıllı Alışveriş Listesi ve 9:16 Hikaye Kartı" width="330" height="717" loading="lazy">
-          </div>
-          <div class="screenshot-card">
-            <img src="screenshots/screenshot6.png" alt="Çek & Pişir - Kalori & Makro Sihirbazı ve Su Takibi" width="330" height="717" loading="lazy">
-          </div>
+
+          <button class="carousel-btn next" onclick="scrollScreenshots(1)" aria-label="Sonraki Ekran">
+            <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+          </button>
+        </div>
+
+        <div class="carousel-dots" id="carouselDots">
+          <button class="carousel-dot active" onclick="scrollToScreenshot(0)" aria-label="1. Ekran"></button>
+          <button class="carousel-dot" onclick="scrollToScreenshot(1)" aria-label="2. Ekran"></button>
+          <button class="carousel-dot" onclick="scrollToScreenshot(2)" aria-label="3. Ekran"></button>
+          <button class="carousel-dot" onclick="scrollToScreenshot(3)" aria-label="4. Ekran"></button>
+          <button class="carousel-dot" onclick="scrollToScreenshot(4)" aria-label="5. Ekran"></button>
+          <button class="carousel-dot" onclick="scrollToScreenshot(5)" aria-label="6. Ekran"></button>
         </div>
       </div>
     </section>
@@ -453,7 +554,37 @@
       }
     }
 
+    function scrollScreenshots(direction) {
+      const track = document.getElementById('screenshotsTrack');
+      if (!track) return;
+      const card = track.querySelector('.screenshot-card');
+      const step = card ? (card.offsetWidth + 24) : 304;
+      track.scrollBy({ left: direction * step, behavior: 'smooth' });
+    }
+
+    function scrollToScreenshot(index) {
+      const track = document.getElementById('screenshotsTrack');
+      if (!track) return;
+      const cards = track.querySelectorAll('.screenshot-card');
+      if (cards[index]) {
+        const left = cards[index].offsetLeft - (track.clientWidth - cards[index].offsetWidth) / 2;
+        track.scrollTo({ left: Math.max(0, left), behavior: 'smooth' });
+      }
+    }
+
     document.addEventListener('DOMContentLoaded', () => {
+      const track = document.getElementById('screenshotsTrack');
+      const dots = document.querySelectorAll('#carouselDots .carousel-dot');
+      if (track && dots.length > 0) {
+        track.addEventListener('scroll', () => {
+          const cards = track.querySelectorAll('.screenshot-card');
+          if (!cards.length) return;
+          const step = cards[0].offsetWidth + 24;
+          const idx = Math.min(dots.length - 1, Math.max(0, Math.round(track.scrollLeft / step)));
+          dots.forEach((d, i) => d.classList.toggle('active', i === idx));
+        }, { passive: true });
+      }
+
       const navLinks = document.getElementById('navLinks');
       const mobileToggle = document.getElementById('mobileToggle');
       const toggleIcon = document.getElementById('toggleIcon');
