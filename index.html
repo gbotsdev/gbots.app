@@ -88,6 +88,56 @@
       margin: 0;
       line-height: 1.2;
     }
+    .hero-screenshot-showcase {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      padding: 10px 0;
+    }
+    .hero-screenshot-showcase img {
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+      border-radius: 24px;
+      box-shadow: 0 22px 50px rgba(0, 0, 0, 0.55), 0 0 28px rgba(0, 200, 151, 0.18);
+      border: 1px solid rgba(0, 200, 151, 0.3);
+      transition: transform 0.35s ease;
+    }
+    .hero-screenshot-showcase img:hover {
+      transform: translateY(-6px) scale(1.015);
+    }
+    .screenshots-section {
+      padding: 72px 0 36px;
+      position: relative;
+    }
+    .screenshots-track {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 22px;
+      margin-top: 36px;
+    }
+    .screenshot-card {
+      background: rgba(22, 32, 29, 0.72);
+      border: 1px solid rgba(0, 200, 151, 0.22);
+      border-radius: 22px;
+      padding: 12px;
+      transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .screenshot-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(0, 200, 151, 0.6);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+    }
+    .screenshot-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 16px;
+      display: block;
+    }
   </style>
 
   <!-- Schema.org Yapılandırılmış Veri (Mobil Uygulama + Organizasyon) -->
@@ -111,7 +161,15 @@
         "name": "Çek & Pişir - Snap & Cook AI Assistant",
         "operatingSystem": "Android",
         "applicationCategory": "FoodAndDrinkApplication",
-        "softwareVersion": "1.0.7",
+        "softwareVersion": "1.0.8",
+        "screenshot": [
+          "https://gbots.app/screenshots/screenshot1.png",
+          "https://gbots.app/screenshots/screenshot2.png",
+          "https://gbots.app/screenshots/screenshot3.png",
+          "https://gbots.app/screenshots/screenshot4.png",
+          "https://gbots.app/screenshots/screenshot5.png",
+          "https://gbots.app/screenshots/screenshot6.png"
+        ],
         "description": "Buzdolabınızdaki malzemelerin fotoğrafını çekin, Gemini AI anında lezzetli ve pratik yemek tarifleri üretsin. Canlı Şefe Danış sohbeti, temassız el sallama ve sesli okuma ile eller serbest pişirme, akıllı alışveriş listesi, otomatik kalori/makro sihirbazı ve su hatırlatıcı tek uygulamada.",
         "installUrl": "https://play.google.com/store/apps/details?id=com.gbots.cekpisir",
         "offers": {
@@ -149,6 +207,7 @@
         <ul class="nav-links" id="navLinks">
           <li><a href="#hero">Ana Sayfa</a></li>
           <li><a href="#featured">Çek & Pişir</a></li>
+          <li><a href="#screenshots">Ekran Görüntüleri</a></li>
           <li><a href="#features">Özellikler</a></li>
           <li><a href="privacy.html">Gizlilik Politikası</a></li>
           <li>
@@ -235,42 +294,41 @@
             </a>
           </div>
 
-          <div class="mockup-wrapper" aria-hidden="true">
-            <div class="mockup-phone">
-              <div class="mockup-notch"></div>
-              <div class="mockup-header">
-                <h4>Çek & Pişir AI</h4>
-                <span class="badge-green">Kalan Hak: 7/7</span>
-              </div>
-              <div class="mockup-item">
-                <div class="mockup-item-icon">📸</div>
-                <div class="mockup-item-text">
-                  <h5>Malzemeleri Çek</h5>
-                  <p>Tavuk, Domates, Biber algılandı</p>
-                </div>
-              </div>
-              <div class="mockup-item">
-                <div class="mockup-item-icon">✨</div>
-                <div class="mockup-item-text">
-                  <h5>Sebzeli Tavuk Sote</h5>
-                  <p>25 Dakika • Kolay • 420 kcal</p>
-                </div>
-              </div>
-              <div class="mockup-item">
-                <div class="mockup-item-icon">👨‍🍳</div>
-                <div class="mockup-item-text">
-                  <h5>Şefe Danış (Canlı Sohbet)</h5>
-                  <p>Alternatif malzeme & kıvam tüyoları</p>
-                </div>
-              </div>
-              <div class="mockup-item">
-                <div class="mockup-item-icon">👋</div>
-                <div class="mockup-item-text">
-                  <h5>Temassız Pişirme Modu</h5>
-                  <p>El Sallama ile Geçiş • Türkçe Sesli</p>
-                </div>
-              </div>
+          <div class="mockup-wrapper">
+            <div class="hero-screenshot-showcase">
+              <img src="screenshots/screenshot1.png" alt="Çek & Pişir Ana Ekran - Fotoğrafı Çek, Yapay Zeka Tarif Üretsin" width="300" height="652" loading="eager">
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- App Screenshots Gallery Section -->
+    <section id="screenshots" class="screenshots-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Uygulama İçi Ekranlar</h2>
+          <p class="section-subtitle">Fotoğraftan tarif üretiminden canlı Şefe Danış sohbetine, el sallayarak temassız pişirmeden kalori sihirbazına kadar tüm deneyimi keşfedin.</p>
+        </div>
+
+        <div class="screenshots-track">
+          <div class="screenshot-card">
+            <img src="screenshots/screenshot1.png" alt="Çek & Pişir - Fotoğrafı Çek, Yapay Zeka Tarif Üretsin" width="330" height="717" loading="lazy">
+          </div>
+          <div class="screenshot-card">
+            <img src="screenshots/screenshot2.png" alt="Çek & Pişir - Püf Noktalarıyla Adım Adım Tarifler" width="330" height="717" loading="lazy">
+          </div>
+          <div class="screenshot-card">
+            <img src="screenshots/screenshot3.png" alt="Çek & Pişir - Şefe Danış: Tarif İçinde Canlı Sohbet" width="330" height="717" loading="lazy">
+          </div>
+          <div class="screenshot-card">
+            <img src="screenshots/screenshot4.png" alt="Çek & Pişir - El Sallayarak Temassız & Sesli Pişirme Modu" width="330" height="717" loading="lazy">
+          </div>
+          <div class="screenshot-card">
+            <img src="screenshots/screenshot5.png" alt="Çek & Pişir - Akıllı Alışveriş Listesi ve 9:16 Hikaye Kartı" width="330" height="717" loading="lazy">
+          </div>
+          <div class="screenshot-card">
+            <img src="screenshots/screenshot6.png" alt="Çek & Pişir - Kalori & Makro Sihirbazı ve Su Takibi" width="330" height="717" loading="lazy">
           </div>
         </div>
       </div>
