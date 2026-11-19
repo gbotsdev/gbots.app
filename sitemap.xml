@@ -1,10 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
   <url>
     <loc>https://gbots.app/</loc>
     <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://gbots.app/og-image.png</image:loc>
+      <image:title>Çek &amp; Pişir - Gbots Studio Yapay Zeka Mutfak Asistanı</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://gbots.app/app-icon.png</image:loc>
+      <image:title>Çek &amp; Pişir Uygulama İkonu - Gbots</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://gbots.app/screenshots/screenshot1.png</image:loc>
+      <image:title>Çek &amp; Pişir Ana Ekran ve Kamera Malzeme Tarama</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://gbots.app/screenshots/screenshot2.png</image:loc>
+      <image:title>Çek &amp; Pişir Yapay Zeka Tarif Sonuçları</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://gbots.app/screenshots/screenshot3.png</image:loc>
+      <image:title>Çek &amp; Pişir Şefe Danış Canlı AI Sohbeti</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://gbots.app/screenshots/screenshot4.png</image:loc>
+      <image:title>Çek &amp; Pişir El Sallayarak Temassız Pişirme Modu</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://gbots.app/screenshots/screenshot5.png</image:loc>
+      <image:title>Çek &amp; Pişir Akıllı Kalori ve Makro Sihirbazı</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://gbots.app/screenshots/screenshot6.png</image:loc>
+      <image:title>Çek &amp; Pişir Akıllı Alışveriş Listem</image:title>
+    </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://gbots.app/og-image.png</video:thumbnail_loc>
+      <video:title>Çek &amp; Pişir - 13 Saniyede Yapay Zeka Yemek Tarifi Asistanı</video:title>
+      <video:description>Gbots Studio tarafından geliştirilen Çek &amp; Pişir ile dolaptaki malzemeleri çekin, canlı şefe danışın ve eller serbest pişirin.</video:description>
+      <video:content_loc>https://gbots.app/cek-pisir-tanitim.mp4</video:content_loc>
+      <video:duration>13</video:duration>
+    </video:video>
   </url>
   <url>
     <loc>https://gbots.app/privacy.html</loc>

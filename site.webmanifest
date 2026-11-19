@@ -1,0 +1,24 @@
+{
+  "name": "Çek & Pişir — Gbots Studio",
+  "short_name": "Çek & Pişir",
+  "description": "Gbots Studio tarafından geliştirilen yapay zeka destekli yemek tarifi, canlı Şefe Danış ve kalori asistanı.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0D0F12",
+  "theme_color": "#00C897",
+  "lang": "tr-TR",
+  "icons": [
+    {
+      "src": "/app-icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "500x500",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
