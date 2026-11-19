@@ -75,7 +75,7 @@
   <link rel="preload" as="image" href="screenshots/screenshot1.png">
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="styles.css?v=3.0">
+  <link rel="stylesheet" href="styles.css?v=4.0">
 
   <!-- Masaüstünde Hamburger Butonunu Zorunlu Gizleyen Güvenlik Kuralı -->
   <style>
@@ -271,9 +271,9 @@
 
         <ul class="nav-links" id="navLinks">
           <li><a href="#featured">Çek &amp; Pişir</a></li>
-          <li><a href="#how-it-works">Nasıl Çalışır</a></li>
-          <li><a href="#screenshots">Ekranlar</a></li>
-          <li><a href="#features">Özellikler</a></li>
+          <li><a href="#demo">Canlı Dene</a></li>
+          <li><a href="kalori-hesaplayici.html">Kalori Hesapla</a></li>
+          <li><a href="medya.html">Medya Kiti</a></li>
           <li><a href="privacy.html">Gizlilik</a></li>
           <li>
             <a href="https://play.google.com/store/apps/details?id=com.gbots.cekpisir" target="_blank" rel="noopener" class="btn-nav">
@@ -304,9 +304,12 @@
           <a href="https://play.google.com/store/apps/details?id=com.gbots.cekpisir" target="_blank" rel="noopener" class="btn-primary">
             <i class="fa-brands fa-google-play" aria-hidden="true"></i> Google Play'den İndir
           </a>
-          <a href="#how-it-works" class="btn-secondary">
-            <i class="fa-solid fa-circle-play" aria-hidden="true"></i> 13 Sn Tanıtımı İzle
+          <a href="#demo" class="btn-secondary">
+            <i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i> Canlı Dene
           </a>
+          <button type="button" class="btn-qr" onclick="openQrModal()" aria-label="Google Play QR Kodunu Göster">
+            <i class="fa-solid fa-qrcode" aria-hidden="true"></i> Telefonla Okut
+          </button>
         </div>
 
         <div class="trust-pills" aria-label="Öne Çıkan Güvenceler">
@@ -376,6 +379,120 @@
           <div class="mockup-wrapper">
             <div class="hero-screenshot-showcase">
               <img src="screenshots/screenshot1.png" alt="Çek & Pişir Ana Ekran - Fotoğrafı Çek, Yapay Zeka Tarif Üretsin" width="295" height="641" loading="eager">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Live Interactive Simulator Section -->
+    <section id="demo" class="demo-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">İndirmeden Önce Tarayıcıda Dene</h2>
+          <p class="section-subtitle">Uygulamanın içindeki <strong>"Tek Tıkla Hemen Dene"</strong> deneyimini, el sallama modunu ve Şefe Danış sohbetini hemen test et.</p>
+        </div>
+
+        <div class="demo-grid">
+          <div class="demo-controls">
+            <h3>1. Evdeki Malzemeni Seç</h3>
+            <p>Aşağıdaki hazır kombinasyonlardan birine dokun; sağdaki ekranda üretilen tarifi, kalorisini ve şef deneyimini anında gör.</p>
+
+            <div class="demo-chips">
+              <button type="button" class="demo-chip active" onclick="selectDemoRecipe(0, this)">
+                <div class="demo-chip-main">
+                  <strong>🥚 Yumurta + 🍅 Domates + 🧀 Kaşar</strong>
+                  <span>Kahvaltı &amp; Hızlı Öğün &bull; ~15 Dk</span>
+                </div>
+                <i class="fa-solid fa-chevron-right demo-chip-arrow" aria-hidden="true"></i>
+              </button>
+
+              <button type="button" class="demo-chip" onclick="selectDemoRecipe(1, this)">
+                <div class="demo-chip-main">
+                  <strong>🥩 Kıyma + 🥔 Patates + 🧅 Soğan</strong>
+                  <span>Doyurucu Ev Yemeği &bull; ~40 Dk</span>
+                </div>
+                <i class="fa-solid fa-chevron-right demo-chip-arrow" aria-hidden="true"></i>
+              </button>
+
+              <button type="button" class="demo-chip" onclick="selectDemoRecipe(2, this)">
+                <div class="demo-chip-main">
+                  <strong>🍗 Tavuk Göğsü + 🫑 Biber + 🧄 Sarımsak</strong>
+                  <span>Yüksek Proteinli Akşam &bull; ~25 Dk</span>
+                </div>
+                <i class="fa-solid fa-chevron-right demo-chip-arrow" aria-hidden="true"></i>
+              </button>
+            </div>
+
+            <div style="margin-top: 22px; display: flex; flex-wrap: wrap; gap: 12px;">
+              <a href="kalori-hesaplayici.html" class="btn-secondary" style="padding: 12px 18px; font-size: 0.9rem;">
+                <i class="fa-solid fa-calculator" aria-hidden="true"></i> Ücretsiz Kalori &amp; Makro Hesapla
+              </a>
+            </div>
+          </div>
+
+          <div class="demo-phone-card">
+            <div class="demo-tabs" role="tablist" aria-label="Demo Görünümleri">
+              <button type="button" class="demo-tab active" id="tabRecipeBtn" onclick="setDemoTab('recipe')">🍲 Tarif &amp; Makro</button>
+              <button type="button" class="demo-tab" id="tabInteractiveBtn" onclick="setDemoTab('chef')">👋 El Salla &amp; Şef</button>
+            </div>
+
+            <!-- Sekme 1: Tarif & Kalori -->
+            <div id="demoPanelRecipe">
+              <div class="demo-recipe-head">
+                <h4 id="demoTitle">Baharatlı Kaşarlı Menemen</h4>
+                <span class="demo-badge-time" id="demoTime">~15 Dk &bull; Kolay</span>
+              </div>
+
+              <div class="demo-macro-pills" id="demoMacros">
+                <span>🔥 340 kcal</span>
+                <span>🥩 21g Protein</span>
+                <span>🍞 11g Karb</span>
+                <span>🥑 23g Yağ</span>
+              </div>
+
+              <div class="demo-tip-box" id="demoTip">
+                <strong>👨‍🍳 Şefin Sırrı:</strong> Yumurtaları kabuklu halde doğrudan sıcak tavaya kırmak yerine bir kasede çırpıp beyazları tam pişirmeden kaşarı eklersen ipeksi kıvam alırsın.
+              </div>
+
+              <div class="demo-steps-preview">
+                <ol id="demoStepsList">
+                  <li>Kabuksuz doğranmış domatesleri zeytinyağında orta ateşte suyunu yarı yarıya çekene dek 5 dakika kavurun.</li>
+                  <li>Tuz ve pul biberi ekleyip çırpılmış yumurtaları tavaya yayın.</li>
+                  <li>Rende kaşarı serpip kapağını kapatın, 2 dakika sonra sıcak servis edin.</li>
+                </ol>
+              </div>
+            </div>
+
+            <!-- Sekme 2: Temassız El Sallama & Şefe Danış -->
+            <div id="demoPanelChef" style="display: none;">
+              <div class="demo-interactive-box">
+                <div class="demo-wave-card">
+                  <div class="demo-wave-top">
+                    <span><i class="fa-solid fa-hand" aria-hidden="true"></i> Temassız Pişirme Simülasyonu</span>
+                    <span id="demoWaveCount">Adım 1 / 3</span>
+                  </div>
+                  <div class="demo-wave-step-text" id="demoWaveText">
+                    Kabuksuz doğranmış domatesleri zeytinyağında orta ateşte suyunu yarı yarıya çekene dek 5 dakika kavurun.
+                  </div>
+                  <button type="button" class="demo-wave-btn" onclick="advanceDemoWave()">
+                    👋 El Salladım (Sonraki Adıma Geç)
+                  </button>
+                </div>
+
+                <div class="demo-chef-card">
+                  <div class="demo-chef-title">
+                    <i class="fa-solid fa-comments" aria-hidden="true"></i> Şefe Danış (Hazır Sorulara Dokun)
+                  </div>
+                  <div class="demo-chef-questions">
+                    <button type="button" class="demo-q-btn active" id="demoQ0" onclick="askDemoChef(0)">Eksik malzeme varsa?</button>
+                    <button type="button" class="demo-q-btn" id="demoQ1" onclick="askDemoChef(1)">Yanına ne iyi gider?</button>
+                  </div>
+                  <div class="demo-chef-reply" id="demoChefReply">
+                    Kaşar peyniri yoksa yerine beyaz peynir veya lor kullanabilirsin; erimesi için son 1 dakikada tavanın kapağını kapatman yeterli.
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -626,14 +743,34 @@
             <a href="https://play.google.com/store/apps/details?id=com.gbots.cekpisir" target="_blank" rel="noopener" class="btn-primary">
               <i class="fa-brands fa-google-play" aria-hidden="true"></i> Google Play'den İndir (Ücretsiz)
             </a>
-            <a href="mailto:contact@gbots.app" class="btn-secondary">
-              <i class="fa-solid fa-envelope" aria-hidden="true"></i> İletişim / İş Birliği
+            <button type="button" class="btn-qr" onclick="openQrModal()" aria-label="Google Play QR Kodunu Aç">
+              <i class="fa-solid fa-qrcode" aria-hidden="true"></i> Telefonla Okut
+            </button>
+            <a href="medya.html" class="btn-secondary">
+              <i class="fa-solid fa-photo-film" aria-hidden="true"></i> Basın / Medya Kiti
             </a>
           </div>
         </div>
       </div>
     </section>
   </main>
+
+  <!-- Masaüstü Kullanıcılar İçin QR İndirme Modalı -->
+  <div class="qr-modal-backdrop" id="qrModal" onclick="if(event.target === this) closeQrModal()" role="dialog" aria-modal="true" aria-labelledby="qrModalTitle">
+    <div class="qr-modal-card">
+      <button type="button" class="qr-modal-close" onclick="closeQrModal()" aria-label="Pencereyi Kapat">
+        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+      </button>
+      <h3 id="qrModalTitle" style="font-size: 1.25rem; font-weight: 800; margin-bottom: 6px;">Telefonla Okut, Hemen İndir</h3>
+      <p style="font-size: 0.88rem; color: var(--text-muted);">Android telefonunun kamerasıyla QR kodu okutarak doğrudan Google Play sayfasını aç.</p>
+      <div class="qr-frame">
+        <img src="qr-playstore.svg" alt="Çek & Pişir Google Play İndirme QR Kodu" width="210" height="210">
+      </div>
+      <a href="https://play.google.com/store/apps/details?id=com.gbots.cekpisir" target="_blank" rel="noopener" class="btn-primary" style="width: 100%; padding: 12px 18px;">
+        <i class="fa-brands fa-google-play" aria-hidden="true"></i> Tarayıcıdan Aç
+      </a>
+    </div>
+  </div>
 
   <!-- Footer -->
   <footer class="footer">
@@ -646,9 +783,9 @@
         <h5>Hızlı Bağlantılar</h5>
         <ul>
           <li><a href="#hero">Ana Sayfa</a></li>
-          <li><a href="#featured">Çek &amp; Pişir</a></li>
-          <li><a href="#how-it-works">Nasıl Çalışır</a></li>
-          <li><a href="#features">Özellikler</a></li>
+          <li><a href="#demo">Canlı Uygulama Demosu</a></li>
+          <li><a href="kalori-hesaplayici.html">Kalori &amp; Makro Hesaplayıcı</a></li>
+          <li><a href="medya.html">İçerik Üreticisi &amp; Medya Kiti</a></li>
           <li><a href="#faq">Sıkça Sorulan Sorular</a></li>
           <li><a href="privacy.html">Gizlilik Politikası</a></li>
         </ul>
@@ -670,6 +807,114 @@
 
   <!-- Interactive JavaScript -->
   <script>
+    const DEMO_RECIPES = [
+      {
+        title: 'Baharatlı Kaşarlı Menemen',
+        time: '~15 Dk • Kolay',
+        macros: ['🔥 340 kcal', '🥩 21g Protein', '🍞 11g Karb', '🥑 23g Yağ'],
+        tip: '<strong>👨‍🍳 Şefin Sırrı:</strong> Yumurtaları kabuklu halde doğrudan sıcak tavaya kırmak yerine bir kasede çırpıp beyazları tam pişirmeden kaşarı eklersen ipeksi kıvam alırsın.',
+        steps: [
+          'Kabuksuz doğranmış domatesleri zeytinyağında orta ateşte suyunu yarı yarıya çekene dek 5 dakika kavurun.',
+          'Tuz ve pul biberi ekleyip çırpılmış yumurtaları tavaya yayın.',
+          'Rende kaşarı serpip kapağını kapatın, 2 dakika sonra sıcak servis edin.'
+        ],
+        chefReplies: [
+          'Kaşar peyniri yoksa yerine beyaz peynir veya lor kullanabilirsin; erimesi için son 1 dakikada tavanın kapağını kapatman yeterli.',
+          'Yanına ince kıyılmış maydanozlu söğüş salatalık ve taze demlenmiş açık çay harika gider!'
+        ]
+      },
+      {
+        title: 'Fırında Pratik Kıymalı Patates',
+        time: '~40 Dk • Kolay',
+        macros: ['🔥 480 kcal', '🥩 28g Protein', '🍞 36g Karb', '🥑 24g Yağ'],
+        tip: '<strong>👨‍🍳 Şefin Sırrı:</strong> Patates dilimlerini 180°C tepsiye sermeden önce 1 yemek kaşığı sıvı yağ ve kekikle harmanlarsan kenarları çıtır kalır, sulanmaz.',
+        steps: [
+          'Kıymayı doğranmış soğan ve salça ile tavada 6 dakika renk alana kadar kavurun.',
+          'Halka doğranmış patatesleri borcama dizip kıymalı harcı üzerine yayın ve yarım çay bardağı sıcak su ekleyin.',
+          'Önceden ısıtılmış 190°C fırında patatesler yumuşayıp üstü kızarana dek 28 dakika pişirin.'
+        ],
+        chefReplies: [
+          'Kıyma yerine ince doğranmış mantar ve yeşil mercimekle harç hazırlayıp birebir aynı adımlarla sebzeli versiyonunu yapabilirsin.',
+          'Fırından çıkınca yanına bol naneli ev yapımı cacık ve pirinç pilavı çok iyi yakışır!'
+        ]
+      },
+      {
+        title: 'Sebzeli Izgara Tavuk Sote',
+        time: '~25 Dk • Kolay',
+        macros: ['🔥 390 kcal', '🥩 42g Protein', '🍞 14g Karb', '🥑 16g Yağ'],
+        tip: '<strong>👨‍🍳 Şefin Sırrı:</strong> Tavukları soğuk tavaya koyma; tava iyice ısınınca tek kat halinde yüksek ateşte mühürlersen suyunu salmaz, lokum gibi olur.',
+        steps: [
+          'Küp doğranmış tavuk göğsünü kızgın tavada yüksek ateşte 5 dakika renk alana dek mühürleyin.',
+          'Jülyen biberleri ve ezilmiş sarımsağı ekleyip orta ateşte 7 dakika daha soteleyin.',
+          'Karabiber, kekik ve tuz ile tatlandırıp ocaktan alarak sıcak servis edin.'
+        ],
+        chefReplies: [
+          'Sarımsağın yanmaması için tavuklarla birlikte değil, biberlerden 2 dakika sonra eklersen aroması daha taze kalır.',
+          'Yüksek proteinli öğün için yanına 4 yemek kaşığı şehriyeli bulgur pilavı veya kinoa salatası harika uyum sağlar.'
+        ]
+      }
+    ];
+
+    let activeDemoIdx = 0;
+    let activeWaveStep = 0;
+    let activeChefQ = 0;
+
+    function renderDemoRecipe() {
+      const r = DEMO_RECIPES[activeDemoIdx];
+      document.getElementById('demoTitle').textContent = r.title;
+      document.getElementById('demoTime').textContent = r.time;
+      document.getElementById('demoMacros').innerHTML = r.macros.map(m => '<span>' + m + '</span>').join('');
+      document.getElementById('demoTip').innerHTML = r.tip;
+      document.getElementById('demoStepsList').innerHTML = r.steps.map(s => '<li>' + s + '</li>').join('');
+      updateWaveView();
+      askDemoChef(activeChefQ);
+    }
+
+    function selectDemoRecipe(idx, btnEl) {
+      activeDemoIdx = idx;
+      activeWaveStep = 0;
+      document.querySelectorAll('.demo-chip').forEach(c => c.classList.remove('active'));
+      if (btnEl) btnEl.classList.add('active');
+      renderDemoRecipe();
+    }
+
+    function setDemoTab(tab) {
+      const isRecipe = tab === 'recipe';
+      document.getElementById('tabRecipeBtn').classList.toggle('active', isRecipe);
+      document.getElementById('tabInteractiveBtn').classList.toggle('active', !isRecipe);
+      document.getElementById('demoPanelRecipe').style.display = isRecipe ? 'block' : 'none';
+      document.getElementById('demoPanelChef').style.display = isRecipe ? 'none' : 'block';
+    }
+
+    function updateWaveView() {
+      const r = DEMO_RECIPES[activeDemoIdx];
+      document.getElementById('demoWaveCount').textContent = 'Adım ' + (activeWaveStep + 1) + ' / ' + r.steps.length;
+      document.getElementById('demoWaveText').textContent = r.steps[activeWaveStep];
+    }
+
+    function advanceDemoWave() {
+      const len = DEMO_RECIPES[activeDemoIdx].steps.length;
+      activeWaveStep = (activeWaveStep + 1) % len;
+      updateWaveView();
+    }
+
+    function askDemoChef(qIdx) {
+      activeChefQ = qIdx;
+      document.getElementById('demoQ0').classList.toggle('active', qIdx === 0);
+      document.getElementById('demoQ1').classList.toggle('active', qIdx === 1);
+      document.getElementById('demoChefReply').textContent = DEMO_RECIPES[activeDemoIdx].chefReplies[qIdx];
+    }
+
+    function openQrModal() {
+      const modal = document.getElementById('qrModal');
+      if (modal) modal.classList.add('open');
+    }
+
+    function closeQrModal() {
+      const modal = document.getElementById('qrModal');
+      if (modal) modal.classList.remove('open');
+    }
+
     function toggleMobileNav() {
       const navLinks = document.getElementById('navLinks');
       const mobileToggle = document.getElementById('mobileToggle');
@@ -745,6 +990,9 @@
             toggleIcon.classList.add('fa-bars');
           }
         }
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeQrModal();
       });
     });
   </script>

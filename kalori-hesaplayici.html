@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-J3KHKY1W8P"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-J3KHKY1W8P');
+  </script>
+
+  <!-- Yandex.Metrika counter -->
+  <script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=114102320', 'ym');
+
+    ym(114102320, 'init', {ssr:true, clickmap:true, referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+  </script>
+  <noscript><div><img src="https://mc.yandex.ru/watch/114102320" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+  <!-- /Yandex.Metrika counter -->
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+
+  <title>Günlük Kalori ve Makro Hesaplayıcı (Ücretsiz) | Çek &amp; Pişir — Gbots Studio</title>
+  <meta name="description" content="Boy, kilo, yaş ve hedefinize göre günlük kalori (BMR/TDEE), protein, karbonhidrat, yağ ve su ihtiyacınızı bilimsel Mifflin-St Jeor formülüyle anında ücretsiz hesaplayın.">
+  <meta name="keywords" content="günlük kalori hesaplama, makro hesaplayıcı, protein ihtiyacı hesaplama, bmr tdee hesaplama, kilo verme kalorisi, kas yapma makrosu, çek ve pişir, gbots studio">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#00C897">
+  <link rel="canonical" href="https://gbots.app/kalori-hesaplayici.html">
+  <link rel="alternate" hreflang="tr" href="https://gbots.app/kalori-hesaplayici.html">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="tr_TR">
+  <meta property="og:url" content="https://gbots.app/kalori-hesaplayici.html">
+  <meta property="og:site_name" content="Gbots Studio">
+  <meta property="og:title" content="Günlük Kalori ve Makro Hesaplayıcı (Ücretsiz) | Çek &amp; Pişir">
+  <meta property="og:description" content="Bilimsel Mifflin-St Jeor denklemiyle günlük kalori, protein, karbonhidrat, yağ ve su hedefinizi saniyeler içinde hesaplayın.">
+  <meta property="og:image" content="https://gbots.app/og-image.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Günlük Kalori ve Makro Hesaplayıcı | Çek &amp; Pişir">
+  <meta name="twitter:description" content="Boy, kilo ve hedefinize özel kalori ve makro besin hedeflerinizi ücretsiz hesaplayın.">
+  <meta name="twitter:image" content="https://gbots.app/og-image.png">
+
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" href="/favicon.png" type="image/png" sizes="500x500">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" sizes="any">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="500x500">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css?v=4.0">
+
+  <style>
+    @media (min-width: 769px) {
+      .mobile-toggle, #mobileToggle {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+      }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "Çek & Pişir Günlük Kalori ve Makro Hesaplayıcı",
+        "url": "https://gbots.app/kalori-hesaplayici.html",
+        "applicationCategory": "HealthApplication",
+        "operatingSystem": "Web",
+        "inLanguage": "tr",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "TRY"
+        },
+        "author": {
+          "@type": "Organization",
+          "name": "Gbots Studio",
+          "url": "https://gbots.app/"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Ana Sayfa",
+            "item": "https://gbots.app/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Kalori ve Makro Hesaplayıcı",
+            "item": "https://gbots.app/kalori-hesaplayici.html"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Günlük kalori ihtiyacı nasıl hesaplanır?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "En güvenilir yöntem olan Mifflin-St Jeor formülüyle cinsiyet, yaş, boy ve kiloya göre Bazal Metabolizma Hızı (BMR) bulunur; ardından günlük hareket seviyesi katsayısıyla çarpılarak TDEE yani günlük toplam enerji harcaması hesaplanır."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Kilo vermek için kaç kalori açığı bırakılmalı?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sağlıklı ve kas kaybı yaşatmayan kilo kaybı için günlük koruma kalorinizden (TDEE) yaklaşık 400-500 kcal düşülmesi önerilir. Hesaplayıcımızda Kilo Ver hedefi bilimsel olarak 450 kcal açık uygular ve protein oranını %30 seviyesine çıkarır."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Hesapladığım makroları telefonda nasıl takip edebilirim?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Çek & Pişir Android uygulamasının Günlük sekmesindeki Akıllı Kalori & Makro Sihirbazı bu formülün aynısını cihazınızda uygular ve dolaptaki malzemelerle hedeflerinize uygun yemek tarifleri önerir."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar" id="navbar" aria-label="Ana Menü">
+      <div class="container nav-container">
+        <a href="index.html" class="brand-logo">
+          <div class="logo-badge">
+            <img src="logo.svg" alt="Gbots Studio Logosu" width="36" height="36">
+          </div>
+          <span>Gbots Studio</span>
+        </a>
+
+        <button class="mobile-toggle" id="mobileToggle" onclick="toggleMobileNav()" aria-label="Menüyü Aç/Kapat" aria-expanded="false">
+          <i class="fa-solid fa-bars" id="toggleIcon" aria-hidden="true"></i>
+        </button>
+
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html#featured">Çek &amp; Pişir</a></li>
+          <li><a href="index.html#demo">Canlı Dene</a></li>
+          <li><a href="kalori-hesaplayici.html" aria-current="page" style="color: var(--primary-mint);">Kalori Hesapla</a></li>
+          <li><a href="medya.html">Medya Kiti</a></li>
+          <li><a href="privacy.html">Gizlilik</a></li>
+          <li>
+            <a href="https://play.google.com/store/apps/details?id=com.gbots.cekpisir" target="_blank" rel="noopener" class="btn-nav">
+              <i class="fa-brands fa-google-play" aria-hidden="true"></i> Ücretsiz İndir
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <div class="tag-badge">
+          <i class="fa-solid fa-calculator" aria-hidden="true"></i> Çek &amp; Pişir Ücretsiz Araç
+        </div>
+        <h1 class="hero-title" style="font-size: clamp(1.9rem, 4.5vw, 2.9rem);">
+          Günlük <span>Kalori, Makro &amp; Su</span> Hesaplayıcı
+        </h1>
+        <p class="hero-subtitle" style="margin-bottom: 10px;">
+          Bilimsel <strong>Mifflin-St Jeor</strong> formülüyle Bazal Metabolizma Hızınızı (BMR), günlük kalori hedefinizi ve protein/karbonhidrat/yağ dağılımınızı saniyeler içinde öğrenin.
+        </p>
+      </div>
+    </section>
+
+    <section class="calc-section">
+      <div class="container">
+        <div class="calc-grid">
+          <!-- Sol Kolon: Form -->
+          <div class="calc-card">
+            <h2 class="calc-card-title"><i class="fa-solid fa-sliders" aria-hidden="true"></i> Fiziksel Bilgileriniz</h2>
+
+            <div class="calc-field">
+              <label class="calc-label">Cinsiyet</label>
+              <div class="gender-toggle" role="group" aria-label="Cinsiyet Seçimi">
+                <button type="button" class="toggle-pill active" id="btnMale" onclick="setGender(true)">
+                  <i class="fa-solid fa-mars" aria-hidden="true"></i> Erkek
+                </button>
+                <button type="button" class="toggle-pill" id="btnFemale" onclick="setGender(false)">
+                  <i class="fa-solid fa-venus" aria-hidden="true"></i> Kadın
+                </button>
+              </div>
+            </div>
+
+            <div class="calc-input-row">
+              <div class="calc-field">
+                <label class="calc-label" for="inpAge">Yaş</label>
+                <div class="calc-input-wrap">
+                  <input type="number" id="inpAge" min="14" max="99" value="26" oninput="updateCalculator()">
+                  <span>yıl</span>
+                </div>
+              </div>
+              <div class="calc-field">
+                <label class="calc-label" for="inpWeight">Kilo</label>
+                <div class="calc-input-wrap">
+                  <input type="number" id="inpWeight" min="35" max="250" step="0.5" value="72" oninput="updateCalculator()">
+                  <span>kg</span>
+                </div>
+              </div>
+              <div class="calc-field">
+                <label class="calc-label" for="inpHeight">Boy</label>
+                <div class="calc-input-wrap">
+                  <input type="number" id="inpHeight" min="120" max="230" value="175" oninput="updateCalculator()">
+                  <span>cm</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="calc-field">
+              <label class="calc-label" for="selActivity">Hareket Seviyesi</label>
+              <select id="selActivity" class="calc-select" onchange="updateCalculator()">
+                <option value="1.2">Masa Başı / Az Hareket (Spor yok)</option>
+                <option value="1.375" selected>Hafif Aktif (Haftada 1-3 gün yürüyüş / spor)</option>
+                <option value="1.55">Orta Aktif (Haftada 3-5 gün egzersiz)</option>
+                <option value="1.725">Çok Aktif (Yoğun antrenman / hareketli iş)</option>
+              </select>
+            </div>
+
+            <div class="calc-field" style="margin-bottom: 0;">
+              <label class="calc-label">Hedefiniz</label>
+              <div class="calc-goal-grid" role="group" aria-label="Hedef Seçimi">
+                <button type="button" class="toggle-pill" id="goalLose" onclick="setGoal(-1)">
+                  🔥 Kilo Ver
+                </button>
+                <button type="button" class="toggle-pill active" id="goalMaintain" onclick="setGoal(0)">
+                  ⚖️ Koru
+                </button>
+                <button type="button" class="toggle-pill" id="goalGain" onclick="setGoal(1)">
+                  💪 Kas / Kilo Al
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sağ Kolon: Canlı Sonuç -->
+          <div class="calc-card calc-result-card">
+            <div class="calc-result-hero">
+              <span class="calc-result-tag" id="resGoalTag">Günlük Koruma Kalorisi</span>
+              <div class="calc-kcal-number"><span id="resCalories">2318</span> <small>kcal</small></div>
+              <p class="calc-result-sub">Günlük önerilen enerji hedefiniz</p>
+            </div>
+
+            <div class="calc-metrics-row">
+              <div class="calc-mini-stat">
+                <span>Bazal Metabolizma (BMR)</span>
+                <strong id="resBmr">1686 kcal</strong>
+              </div>
+              <div class="calc-mini-stat">
+                <span>Günlük Harcama (TDEE)</span>
+                <strong id="resTdee">2318 kcal</strong>
+              </div>
+              <div class="calc-mini-stat">
+                <span>Önerilen Su</span>
+                <strong id="resWater">2.4 L (~10 brdk)</strong>
+              </div>
+            </div>
+
+            <div class="macro-breakdown">
+              <div class="macro-bars-header">
+                <span>Makro Dağılımı</span>
+                <span id="resSplitText">%25 Protein &bull; %45 Karb &bull; %30 Yağ</span>
+              </div>
+              <div class="macro-stacked-track" aria-hidden="true">
+                <div class="macro-seg-p" id="barP" style="width: 25%;"></div>
+                <div class="macro-seg-c" id="barC" style="width: 45%;"></div>
+                <div class="macro-seg-f" id="barF" style="width: 30%;"></div>
+              </div>
+
+              <div class="macro-cards-3">
+                <div class="macro-pill protein">
+                  <span>Protein</span>
+                  <strong id="resProtein">145 g</strong>
+                </div>
+                <div class="macro-pill carbs">
+                  <span>Karbonhidrat</span>
+                  <strong id="resCarbs">261 g</strong>
+                </div>
+                <div class="macro-pill fat">
+                  <span>Yağ</span>
+                  <strong id="resFat">77 g</strong>
+                </div>
+              </div>
+            </div>
+
+            <div class="calc-app-promo">
+              <div class="calc-app-promo-text">
+                <strong>Bu hedefleri telefonunda otomatik takip et!</strong>
+                <span>Çek &amp; Pişir elindeki malzemelere ve makrona göre tarif önerir, 7 günlük kalori/su grafiğini tutar.</span>
+              </div>
+              <a href="https://play.google.com/store/apps/details?id=com.gbots.cekpisir" target="_blank" rel="noopener" class="btn-primary" style="width: 100%; padding: 13px 20px;">
+                <i class="fa-brands fa-google-play" aria-hidden="true"></i> Çek &amp; Pişir'i Ücretsiz İndir
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bilgi & SSS Bölümü (Organik SEO İçeriği) -->
+    <section class="faq-section" style="padding-top: 24px;">
+      <div class="container">
+        <div class="section-header" style="margin-bottom: 32px;">
+          <h2 class="section-title" style="font-size: clamp(1.5rem, 3.2vw, 2rem);">Hesaplama Nasıl Yapılır?</h2>
+          <p class="section-subtitle">Spor beslenmesi ve diyetisyenlik pratiğinde altın standart kabul edilen formüllerle şeffaf hesaplama.</p>
+        </div>
+
+        <div class="faq-list">
+          <details class="faq-item" open>
+            <summary>
+              <span>Günlük kalori ihtiyacı (Mifflin-St Jeor) nasıl hesaplanır?</span>
+              <i class="fa-solid fa-chevron-down faq-chevron" aria-hidden="true"></i>
+            </summary>
+            <div class="faq-answer">
+              İlk adımda vücudunuzun dinlenme halinde yaktığı enerji olan <strong>BMR</strong> hesaplanır: <code>(10 &times; Kilo) + (6.25 &times; Boy) &minus; (5 &times; Yaş) + 5 (Erkek) / &minus;161 (Kadın)</code>. Ardından günlük hareket seviyenizle (1.2 ile 1.725 arası) çarpılarak <strong>TDEE</strong> (Toplam Günlük Enerji Harcaması) bulunur.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>
+              <span>Kilo vermek için kaç kalori açığı bırakılmalıdır?</span>
+              <i class="fa-solid fa-chevron-down faq-chevron" aria-hidden="true"></i>
+            </summary>
+            <div class="faq-answer">
+              Çok düşük kalorili şok diyetler yerine, sürdürülebilir yağ yakımı ve kas kütlesini korumak için TDEE değerinden günde <strong>450 kcal</strong> düşülmesi idealdir. Hesaplayıcımızda "Kilo Ver" seçeneği tam bu dengeyi uygular ve protein oranını %30'a çıkarır.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>
+              <span>Bu hedefleri mutfakta tariflere nasıl uygularım?</span>
+              <i class="fa-solid fa-chevron-down faq-chevron" aria-hidden="true"></i>
+            </summary>
+            <div class="faq-answer">
+              <a href="https://play.google.com/store/apps/details?id=com.gbots.cekpisir" target="_blank" rel="noopener" style="color: var(--primary-mint); font-weight: 600;">Çek &amp; Pişir Android uygulamasındaki</a> Günlük sekmesinde aynı sihirbazı tek tıkla hedef olarak kaydedebilir, elindeki malzemelerin fotoğrafını çekerek makrolarına uygun ev yemekleri üretebilirsin.
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <h4>Gbots Studio</h4>
+        <p>Yapay zeka ve mobil teknolojileri bir araya getirerek günlük yaşamı kolaylaştıran, estetik ve gizlilik odaklı dijital deneyimler geliştiriyoruz.</p>
+      </div>
+      <div class="footer-links">
+        <h5>Hızlı Bağlantılar</h5>
+        <ul>
+          <li><a href="index.html">Ana Sayfa</a></li>
+          <li><a href="index.html#demo">Canlı Uygulama Demosu</a></li>
+          <li><a href="kalori-hesaplayici.html">Kalori Hesaplayıcı</a></li>
+          <li><a href="medya.html">İçerik Üreticisi &amp; Medya Kiti</a></li>
+          <li><a href="privacy.html">Gizlilik Politikası</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h5>İletişim &amp; Destek</h5>
+        <ul>
+          <li><a href="mailto:contact@gbots.app"><i class="fa-solid fa-envelope" aria-hidden="true"></i> contact@gbots.app</a></li>
+          <li><a href="https://play.google.com/store/apps/details?id=com.gbots.cekpisir" target="_blank" rel="noopener"><i class="fa-brands fa-google-play" aria-hidden="true"></i> Google Play Store</a></li>
+          <li><a href="https://www.instagram.com/gbotsstudio" target="_blank" rel="noopener"><i class="fa-brands fa-instagram" aria-hidden="true"></i> @gbotsstudio</a></li>
+          <li><a href="https://www.facebook.com/gbotsstudio/" target="_blank" rel="noopener"><i class="fa-brands fa-facebook" aria-hidden="true"></i> Gbots Studio</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Gbots Studio. Tüm hakları saklıdır.</p>
+    </div>
+  </footer>
+
+  <script>
+    let calcIsMale = true;
+    let calcGoal = 0;
+
+    function setGender(male) {
+      calcIsMale = male;
+      document.getElementById('btnMale').classList.toggle('active', male);
+      document.getElementById('btnFemale').classList.toggle('active', !male);
+      updateCalculator();
+    }
+
+    function setGoal(goal) {
+      calcGoal = goal;
+      document.getElementById('goalLose').classList.toggle('active', goal === -1);
+      document.getElementById('goalMaintain').classList.toggle('active', goal === 0);
+      document.getElementById('goalGain').classList.toggle('active', goal === 1);
+      updateCalculator();
+    }
+
+    function clampNum(val, min, max, fallback) {
+      const n = parseFloat(val);
+      if (Number.isNaN(n)) return fallback;
+      return Math.min(max, Math.max(min, n));
+    }
+
+    function updateCalculator() {
+      const age = Math.round(clampNum(document.getElementById('inpAge').value, 14, 99, 26));
+      const weight = clampNum(document.getElementById('inpWeight').value, 35, 250, 72);
+      const height = clampNum(document.getElementById('inpHeight').value, 120, 230, 175);
+      const mult = parseFloat(document.getElementById('selActivity').value) || 1.375;
+
+      const bmr = (10 * weight) + (6.25 * height) - (5 * age) + (calcIsMale ? 5 : -161);
+      const tdee = bmr * mult;
+
+      let target = tdee;
+      let goalText = 'Günlük Koruma Kalorisi';
+      if (calcGoal === -1) {
+        target = tdee - 450;
+        goalText = 'Sağlıklı Yağ Yakımı Hedefi (-450 kcal)';
+      } else if (calcGoal === 1) {
+        target = tdee + 350;
+        goalText = 'Kontrollü Kas / Kilo Artışı (+350 kcal)';
+      }
+
+      const minCal = calcIsMale ? 1400 : 1200;
+      const calories = Math.round(Math.min(4500, Math.max(minCal, target)));
+
+      const pRatio = calcGoal === -1 ? 0.30 : 0.25;
+      const cRatio = calcGoal === -1 ? 0.40 : (calcGoal === 1 ? 0.50 : 0.45);
+      const fRatio = calcGoal === 1 ? 0.25 : 0.30;
+
+      const protein = Math.round((calories * pRatio) / 4);
+      const carbs = Math.round((calories * cRatio) / 4);
+      const fat = Math.round((calories * fRatio) / 9);
+
+      const waterMl = Math.round(weight * 33);
+      const waterL = (waterMl / 1000).toFixed(1);
+      const glasses = Math.max(6, Math.round(waterMl / 250));
+
+      document.getElementById('resGoalTag').textContent = goalText;
+      document.getElementById('resCalories').textContent = calories;
+      document.getElementById('resBmr').textContent = Math.round(bmr) + ' kcal';
+      document.getElementById('resTdee').textContent = Math.round(tdee) + ' kcal';
+      document.getElementById('resWater').textContent = waterL + ' L (~' + glasses + ' brdk)';
+
+      const pPct = Math.round(pRatio * 100);
+      const cPct = Math.round(cRatio * 100);
+      const fPct = Math.round(fRatio * 100);
+
+      document.getElementById('resSplitText').textContent = '%' + pPct + ' Protein • %' + cPct + ' Karb • %' + fPct + ' Yağ';
+      document.getElementById('barP').style.width = pPct + '%';
+      document.getElementById('barC').style.width = cPct + '%';
+      document.getElementById('barF').style.width = fPct + '%';
+
+      document.getElementById('resProtein').textContent = protein + ' g';
+      document.getElementById('resCarbs').textContent = carbs + ' g';
+      document.getElementById('resFat').textContent = fat + ' g';
+    }
+
+    function toggleMobileNav() {
+      const navLinks = document.getElementById('navLinks');
+      const mobileToggle = document.getElementById('mobileToggle');
+      const toggleIcon = document.getElementById('toggleIcon');
+      if (!navLinks) return;
+
+      const isOpen = navLinks.classList.toggle('active');
+      if (mobileToggle) mobileToggle.setAttribute('aria-expanded', isOpen);
+      if (toggleIcon) {
+        toggleIcon.classList.toggle('fa-bars', !isOpen);
+        toggleIcon.classList.toggle('fa-xmark', isOpen);
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      updateCalculator();
+      const navLinks = document.getElementById('navLinks');
+      const mobileToggle = document.getElementById('mobileToggle');
+      const toggleIcon = document.getElementById('toggleIcon');
+      if (navLinks) {
+        navLinks.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            if (mobileToggle) mobileToggle.setAttribute('aria-expanded', 'false');
+            if (toggleIcon) {
+              toggleIcon.classList.add('fa-bars');
+              toggleIcon.classList.remove('fa-xmark');
+            }
+          });
+        });
+      }
+      document.addEventListener('click', (e) => {
+        if (navLinks && mobileToggle && !navLinks.contains(e.target) && !mobileToggle.contains(e.target) && navLinks.classList.contains('active')) {
+          navLinks.classList.remove('active');
+          mobileToggle.setAttribute('aria-expanded', 'false');
+          if (toggleIcon) {
+            toggleIcon.classList.add('fa-bars');
+            toggleIcon.classList.remove('fa-xmark');
+          }
+        }
+      });
+    });
+  </script>
+</body>
+</html>
