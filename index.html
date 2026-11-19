@@ -75,7 +75,7 @@
   <link rel="preload" as="image" href="screenshots/screenshot1.png">
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="styles.css?v=4.0">
+  <link rel="stylesheet" href="styles.css?v=4.1">
 
   <!-- Masaüstünde Hamburger Butonunu Zorunlu Gizleyen Güvenlik Kuralı -->
   <style>
@@ -433,15 +433,15 @@
 
           <div class="demo-phone-card">
             <div class="demo-tabs" role="tablist" aria-label="Demo Görünümleri">
-              <button type="button" class="demo-tab active" id="tabRecipeBtn" onclick="setDemoTab('recipe')">🍲 Tarif &amp; Makro</button>
+              <button type="button" class="demo-tab active" id="tabRecipeBtn" onclick="setDemoTab('recipe')">📋 Tarif &amp; Malzemeler</button>
               <button type="button" class="demo-tab" id="tabInteractiveBtn" onclick="setDemoTab('chef')">👋 El Salla &amp; Şef</button>
             </div>
 
-            <!-- Sekme 1: Tarif & Kalori -->
+            <!-- Sekme 1: Detaylı Şef Tarifi, Ölçülü Malzemeler & Püf Noktaları -->
             <div id="demoPanelRecipe">
               <div class="demo-recipe-head">
-                <h4 id="demoTitle">Baharatlı Kaşarlı Menemen</h4>
-                <span class="demo-badge-time" id="demoTime">~15 Dk &bull; Kolay</span>
+                <h4 id="demoTitle">Tereyağlı Kaşarlı Sahanda Menemen</h4>
+                <span class="demo-badge-time" id="demoTime">Hazırlık 6 Dk &bull; Pişirme 9 Dk &bull; Kolay</span>
               </div>
 
               <div class="demo-macro-pills" id="demoMacros">
@@ -451,16 +451,51 @@
                 <span>🥑 23g Yağ</span>
               </div>
 
-              <div class="demo-tip-box" id="demoTip">
-                <strong>👨‍🍳 Şefin Sırrı:</strong> Yumurtaları kabuklu halde doğrudan sıcak tavaya kırmak yerine bir kasede çırpıp beyazları tam pişirmeden kaşarı eklersen ipeksi kıvam alırsın.
+              <div class="demo-ingredients-box">
+                <div class="demo-subhead"><i class="fa-solid fa-basket-shopping" aria-hidden="true"></i> Ölçülü Malzemeler (2 Kişilik)</div>
+                <ul class="demo-ingredients-grid" id="demoIngredientsList">
+                  <li>3 adet büyük boy oda sıcaklığında yumurta</li>
+                  <li>3 adet orta boy sulu domates (kabukları soyulup küçük küp doğranmış)</li>
+                  <li>2 adet yeşil sivri biber (çekirdekleri temizlenip ince halkalanmış)</li>
+                  <li>1 su bardağı taze rendelenmiş kaşar peyniri</li>
+                  <li>1 yemek kaşığı tereyağı + 1 yemek kaşığı zeytinyağı</li>
+                  <li>1 tatlı kaşığı silme tuz, ½ çay kaşığı pul biber ve taze çekilmiş karabiber</li>
+                </ul>
               </div>
 
-              <div class="demo-steps-preview">
-                <ol id="demoStepsList">
-                  <li>Kabuksuz doğranmış domatesleri zeytinyağında orta ateşte suyunu yarı yarıya çekene dek 5 dakika kavurun.</li>
-                  <li>Tuz ve pul biberi ekleyip çırpılmış yumurtaları tavaya yayın.</li>
-                  <li>Rende kaşarı serpip kapağını kapatın, 2 dakika sonra sıcak servis edin.</li>
-                </ol>
+              <div class="demo-subhead"><i class="fa-solid fa-fire-burner" aria-hidden="true"></i> Adım Adım Şef Anlatımı (6 Adım)</div>
+              <div class="demo-steps-preview" id="demoStepsList">
+                <div class="demo-step-item">
+                  <div class="demo-step-num">1</div>
+                  <div class="demo-step-text">Geniş yayvan bir tavayı <strong>orta ateşe</strong> alın; zeytinyağı ve tereyağını eritip köpürmesini bekleyin ki biberler yağda yanmadan aromalarını salabilsin.</div>
+                </div>
+                <div class="demo-step-item">
+                  <div class="demo-step-num">2</div>
+                  <div class="demo-step-text">İnce doğradığınız sivri biberleri tavaya alın, <strong>orta ateşte kapaksız</strong> şekilde rengi hafif dönüp kokusu çıkana kadar yaklaşık <strong>3 dakika</strong> soteleyin.</div>
+                </div>
+                <div class="demo-step-item">
+                  <div class="demo-step-num">3</div>
+                  <div class="demo-step-text">Küp doğranmış domatesleri ve tuzu ekleyin; önce harlı ateşte kaynamasını bekleyip sonra <strong>kısık-orta ateşte kapağı kapalı olarak 5 dakika</strong> domatesler tamamen yumuşayıp sos kıvamına gelene dek pişirin.</div>
+                </div>
+                <div class="demo-step-item">
+                  <div class="demo-step-num">4</div>
+                  <div class="demo-step-text">Kapağı açıp fazla su varsa 1 dakika buharlaştırın; ardından bir kasede çatal yardımıyla <strong>sadece sarı-beyazı hafifçe karışacak kadar</strong> (aşırı köpürtmeden) çırptığınız yumurtaları tavaya gezdirin.</div>
+                </div>
+                <div class="demo-step-item">
+                  <div class="demo-step-num">5</div>
+                  <div class="demo-step-text">Yumurtaları ezmeden tahta kaşıkla alttan üste 2-3 kez nazikçe katlayın; beyazlar yarı saydam görünmeye başladığında (yaklaşık <strong>90 saniye sonra</strong>) üzerine rendelenmiş kaşarı ve pul biberi serpin.</div>
+                </div>
+                <div class="demo-step-item">
+                  <div class="demo-step-num">6</div>
+                  <div class="demo-step-text">Tavanın kapağını kapatıp ocağı en kısığa getirin; peynir tamamen eriyip kenarlardan hafifçe kabarcıklar çıkana kadar <strong>1-2 dakika</strong> dinlendirdikten sonra sıcak servis edin.</div>
+                </div>
+              </div>
+
+              <div class="demo-tip-box" style="margin-top: 14px; margin-bottom: 0;" id="demoTip">
+                <strong>👨‍🍳 Şefin Püf Noktası:</strong> Domateslerin kabuğunu soymak sosun ağızda pürüzsüz dağılmasını sağlar; yumurtaları da kaşardan hemen önce eklemek menemenin lastik gibi kurumasını önler.
+              </div>
+              <div class="demo-serve-box" id="demoServe">
+                <strong>🍽️ Servis Önerisi:</strong> Kızarmış ekşi maya ekmek dilimleri, ince kıyılmış maydanoz ve taze demlenmiş çayla doğrudan tavada sıcak servis edin.
               </div>
             </div>
 
@@ -470,10 +505,10 @@
                 <div class="demo-wave-card">
                   <div class="demo-wave-top">
                     <span><i class="fa-solid fa-hand" aria-hidden="true"></i> Temassız Pişirme Simülasyonu</span>
-                    <span id="demoWaveCount">Adım 1 / 3</span>
+                    <span id="demoWaveCount">Adım 1 / 6</span>
                   </div>
                   <div class="demo-wave-step-text" id="demoWaveText">
-                    Kabuksuz doğranmış domatesleri zeytinyağında orta ateşte suyunu yarı yarıya çekene dek 5 dakika kavurun.
+                    Geniş yayvan bir tavayı orta ateşe alın; zeytinyağı ve tereyağını eritip köpürmesini bekleyin ki biberler yağda yanmadan aromalarını salabilsin.
                   </div>
                   <button type="button" class="demo-wave-btn" onclick="advanceDemoWave()">
                     👋 El Salladım (Sonraki Adıma Geç)
@@ -486,10 +521,11 @@
                   </div>
                   <div class="demo-chef-questions">
                     <button type="button" class="demo-q-btn active" id="demoQ0" onclick="askDemoChef(0)">Eksik malzeme varsa?</button>
-                    <button type="button" class="demo-q-btn" id="demoQ1" onclick="askDemoChef(1)">Yanına ne iyi gider?</button>
+                    <button type="button" class="demo-q-btn" id="demoQ1" onclick="askDemoChef(1)">Kıvamı sulu olursa?</button>
+                    <button type="button" class="demo-q-btn" id="demoQ2" onclick="askDemoChef(2)">Yanına ne iyi gider?</button>
                   </div>
                   <div class="demo-chef-reply" id="demoChefReply">
-                    Kaşar peyniri yoksa yerine beyaz peynir veya lor kullanabilirsin; erimesi için son 1 dakikada tavanın kapağını kapatman yeterli.
+                    Kaşar peyniri yoksa ufalanmış beyaz peynir veya taze lor kullanabilirsin; tereyağı yerine yalnızca zeytinyağı kullanırsan daha hafif bir kahvaltılık elde edersin.
                   </div>
                 </div>
               </div>
@@ -809,48 +845,87 @@
   <script>
     const DEMO_RECIPES = [
       {
-        title: 'Baharatlı Kaşarlı Menemen',
-        time: '~15 Dk • Kolay',
+        title: 'Tereyağlı Kaşarlı Sahanda Menemen',
+        time: 'Hazırlık 6 Dk • Pişirme 9 Dk • Kolay',
         macros: ['🔥 340 kcal', '🥩 21g Protein', '🍞 11g Karb', '🥑 23g Yağ'],
-        tip: '<strong>👨‍🍳 Şefin Sırrı:</strong> Yumurtaları kabuklu halde doğrudan sıcak tavaya kırmak yerine bir kasede çırpıp beyazları tam pişirmeden kaşarı eklersen ipeksi kıvam alırsın.',
-        steps: [
-          'Kabuksuz doğranmış domatesleri zeytinyağında orta ateşte suyunu yarı yarıya çekene dek 5 dakika kavurun.',
-          'Tuz ve pul biberi ekleyip çırpılmış yumurtaları tavaya yayın.',
-          'Rende kaşarı serpip kapağını kapatın, 2 dakika sonra sıcak servis edin.'
+        ingredients: [
+          '3 adet büyük boy oda sıcaklığında yumurta',
+          '3 adet orta boy sulu domates (kabukları soyulup küçük küp doğranmış)',
+          '2 adet yeşil sivri biber (çekirdekleri temizlenip ince halkalanmış)',
+          '1 su bardağı taze rendelenmiş kaşar peyniri',
+          '1 yemek kaşığı tereyağı + 1 yemek kaşığı zeytinyağı',
+          '1 tatlı kaşığı silme tuz, ½ çay kaşığı pul biber ve karabiber'
         ],
+        steps: [
+          'Geniş yayvan bir tavayı <strong>orta ateşe</strong> alın; zeytinyağı ve tereyağını eritip köpürmesini bekleyin ki biberler yağda yanmadan aromalarını salabilsin.',
+          'İnce doğradığınız sivri biberleri tavaya alın, <strong>orta ateşte kapaksız</strong> şekilde rengi hafif dönüp kokusu çıkana kadar yaklaşık <strong>3 dakika</strong> soteleyin.',
+          'Küp doğranmış domatesleri ve tuzu ekleyin; önce harlı ateşte kaynamasını bekleyip sonra <strong>kısık-orta ateşte kapağı kapalı olarak 5 dakika</strong> domatesler tamamen yumuşayıp sos kıvamına gelene dek pişirin.',
+          'Kapağı açıp fazla su varsa 1 dakika buharlaştırın; ardından bir kasede çatal yardımıyla <strong>sadece sarı-beyazı hafifçe karışacak kadar</strong> (aşırı köpürtmeden) çırptığınız yumurtaları tavaya gezdirin.',
+          'Yumurtaları ezmeden tahta kaşıkla alttan üste 2-3 kez nazikçe katlayın; beyazlar yarı saydam görünmeye başladığında (yaklaşık <strong>90 saniye sonra</strong>) üzerine rendelenmiş kaşarı ve pul biberi serpin.',
+          'Tavanın kapağını kapatıp ocağı en kısığa getirin; peynir tamamen eriyip kenarlardan hafifçe kabarcıklar çıkana kadar <strong>1-2 dakika</strong> dinlendirdikten sonra sıcak servis edin.'
+        ],
+        tip: '<strong>👨‍🍳 Şefin Püf Noktası:</strong> Domateslerin kabuğunu soymak sosun ağızda pürüzsüz dağılmasını sağlar; yumurtaları da kaşardan hemen önce eklemek menemenin lastik gibi kurumasını önler.',
+        serve: '<strong>🍽️ Servis Önerisi:</strong> Kızarmış ekşi maya ekmek dilimleri, ince kıyılmış maydanoz ve taze demlenmiş çayla doğrudan tavada sıcak servis edin.',
         chefReplies: [
-          'Kaşar peyniri yoksa yerine beyaz peynir veya lor kullanabilirsin; erimesi için son 1 dakikada tavanın kapağını kapatman yeterli.',
-          'Yanına ince kıyılmış maydanozlu söğüş salatalık ve taze demlenmiş açık çay harika gider!'
+          'Kaşar peyniri yoksa ufalanmış beyaz peynir veya taze lor kullanabilirsin; tereyağı yerine yalnızca zeytinyağı kullanırsan daha hafif bir kahvaltılık elde edersin.',
+          'Eğer domatesin çok suluyduysa yumurtaları eklemeden önce ocağı orta-yüksek seviyeye alıp kapağı açık halde 1-2 dakika suyunu çektirmek tam ideal kıvamı yakalamanı sağlar.',
+          'Kızarmış ekmek yanında ince doğranmış taze salatalık, siyah zeytin ve az kimyon serpilmiş sade söğüş çok iyi dengeler!'
         ]
       },
       {
-        title: 'Fırında Pratik Kıymalı Patates',
-        time: '~40 Dk • Kolay',
+        title: 'Fırında Salça Soslu Kıymalı Patates Dizmesi',
+        time: 'Hazırlık 12 Dk • Pişirme 28 Dk • Kolay',
         macros: ['🔥 480 kcal', '🥩 28g Protein', '🍞 36g Karb', '🥑 24g Yağ'],
-        tip: '<strong>👨‍🍳 Şefin Sırrı:</strong> Patates dilimlerini 180°C tepsiye sermeden önce 1 yemek kaşığı sıvı yağ ve kekikle harmanlarsan kenarları çıtır kalır, sulanmaz.',
-        steps: [
-          'Kıymayı doğranmış soğan ve salça ile tavada 6 dakika renk alana kadar kavurun.',
-          'Halka doğranmış patatesleri borcama dizip kıymalı harcı üzerine yayın ve yarım çay bardağı sıcak su ekleyin.',
-          'Önceden ısıtılmış 190°C fırında patatesler yumuşayıp üstü kızarana dek 28 dakika pişirin.'
+        ingredients: [
+          '300 gr orta yağlı dana kıyma',
+          '4 adet orta boy patates (kabukları soyulup yarım cm kalınlığında halka dilimlenmiş)',
+          '1 adet büyük boy kuru soğan (yemeklik ince doğranmış)',
+          '1 yemek kaşığı domates salçası + 2 diş ezilmiş sarımsak',
+          '3 yemek kaşığı zeytinyağı + 1 su bardağı sıcak su',
+          '1 tatlı kaşığı tuz, ½ çay kaşığı karabiber, 1 çay kaşığı kekik'
         ],
+        steps: [
+          'Yapışmaz tavayı <strong>orta-yüksek ateşte</strong> 1 dakika ısıtın; 1 yemek kaşığı zeytinyağı ile kıymayı suyunu salıp tekrar çekene ve tane tane kavrulana dek <strong>5 dakika</strong> karıştırarak kavurun.',
+          'Doğranmış soğan ve sarımsağı tavaya ekleyin; soğanlar şeffaflaşıp kenarları hafif pembeleşene kadar <strong>orta ateşte 4 dakika</strong> daha pişirin.',
+          'Salçayı ilave edip çiğ kokusu gidene dek 1 dakika kavurduktan sonra ½ su bardağı sıcak su, kekik, tuz ve karabiberi ekleyerek sosun özdeşleşmesi için <strong>kısık ateşte 2 dakika</strong> kaynatıp ocaktan alın.',
+          'Orta boy bir fırın tepsisine halka doğradığınız patatesleri hafif üst üste binecek şekilde dizin; kalan zeytinyağı ve bir tutam tuzla alt üst harmanlayın ki kenarları fırında kuruyup yanmasın.',
+          'Hazırladığınız kıymalı salçalı harcı patateslerin her yerine gelecek şekilde yayın, kalan ½ su bardağı sıcak suyu kenardan döküp üzerini yağlı kağıt veya folyo ile kapatarak <strong>önceden ısıtılmış 195°C fırında 18 dakika</strong> pişirin.',
+          'Patatesler çatalı kolayca kabul edecek kadar yumuşadığında üzerini açın ve <strong>10 dakika daha</strong> kıymanın üzeri hafifçe kızarıp sos koyulaşana dek fırınlayıp sıcak servis edin.'
+        ],
+        tip: '<strong>👨‍🍳 Şefin Püf Noktası:</strong> Patates dilimlerini eşit kalınlıkta kesmek bazılarının çiğ kalıp diğerlerinin dağılmasını önler; ilk 18 dakikayı kapalı pişirmek ise buharla lokum gibi pişmelerini sağlar.',
+        serve: '<strong>🍽️ Servis Önerisi:</strong> Fırından çıkarıp 5 dakika dinlendirdikten sonra üzerine ince doğranmış maydanoz serpin; yanında tereyağlı pirinç pilavı ve bol naneli cacıkla servis edin.',
         chefReplies: [
-          'Kıyma yerine ince doğranmış mantar ve yeşil mercimekle harç hazırlayıp birebir aynı adımlarla sebzeli versiyonunu yapabilirsin.',
-          'Fırından çıkınca yanına bol naneli ev yapımı cacık ve pirinç pilavı çok iyi yakışır!'
+          'Domates salçan yoksa ½ yemek kaşığı biber salçası ile 1 adet rendelenmiş domatesi birlikte kavurarak çok lezzetli bir sos elde edebilirsin.',
+          'Üzerinin kurumaması için fırının son 5 dakikasında fanı kapatıp sadece alt-üst ayarda tutabilir veya üzerine 1 yemek kaşığı kadar sos gezdirip tekrar fırınlayabilirsin.',
+          'Yanına mutlaka tane tane şehriyeli bulgur veya pirinç pilavı ile soğuk ev yapımı cacık çok yakışır!'
         ]
       },
       {
-        title: 'Sebzeli Izgara Tavuk Sote',
-        time: '~25 Dk • Kolay',
+        title: 'Sarımsaklı Renkli Biberli Lokum Tavuk Sote',
+        time: 'Hazırlık 10 Dk • Pişirme 15 Dk • Kolay',
         macros: ['🔥 390 kcal', '🥩 42g Protein', '🍞 14g Karb', '🥑 16g Yağ'],
-        tip: '<strong>👨‍🍳 Şefin Sırrı:</strong> Tavukları soğuk tavaya koyma; tava iyice ısınınca tek kat halinde yüksek ateşte mühürlersen suyunu salmaz, lokum gibi olur.',
-        steps: [
-          'Küp doğranmış tavuk göğsünü kızgın tavada yüksek ateşte 5 dakika renk alana dek mühürleyin.',
-          'Jülyen biberleri ve ezilmiş sarımsağı ekleyip orta ateşte 7 dakika daha soteleyin.',
-          'Karabiber, kekik ve tuz ile tatlandırıp ocaktan alarak sıcak servis edin.'
+        ingredients: [
+          '450 gr tavuk göğsü (eşit lokmalık küpler halinde doğranmış)',
+          '2 adet yeşil çarliston veya sivri biber + 1 adet kırmızı kapya biber',
+          '3 diş sarımsak (ince dilimlenmiş) + 1 adet küçük boy kuru soğan',
+          '1 yemek kaşığı tereyağı + 2 yemek kaşığı zeytinyağı',
+          '1 yemek kaşığı domates salçası (veya 2 yemek kaşığı domates rendesi)',
+          '1 tatlı kaşığı kekik, 1 çay kaşığı tuz, ½ çay kaşığı karabiber'
         ],
+        steps: [
+          'Doğranmış tavuk göğüslerini 1 yemek kaşığı zeytinyağı, tuz ve karabiberle 2 dakika harmanlayın; geniş döküm veya çelik tavayı <strong>harlı ateşte</strong> iyice kızdırın (soğuk tava tavuğun suyunu salıp sertleşmesine yol açar).',
+          'Tavukları kızgın tavaya üst üste binmeyecek şekilde tek kat yayın; dışları mühürlenip altın sarısı alana kadar karıştırmadan <strong>3 dakika</strong>, ardından alt üst çevirerek <strong>3 dakika</strong> daha yüksek ateşte pişirin.',
+          'Ocağı <strong>orta seviyeye</strong> düşürüp kalan zeytinyağını, ince doğranmış soğanları ve jülyen (uzun ince) kestiğiniz renkli biberleri ekleyin; sebzeler diriliğini hafif kaybedene kadar kapaksız <strong>4 dakika</strong> soteleyin.',
+          'İnce dilimlenmiş sarımsakları ve salçayı tavaya alıp <strong>1 dakika</strong> aromaları çıkana dek çevirin (sarımsak başta konursa yanıp acı tat bırakır).',
+          'Tereyağını, kekiği ve 3 yemek kaşığı sıcak suyu ekleyip tavanın dibindeki karamelize lezzetleri tahta kaşıkla kazıyarak sosun tavukları kaplamasını sağlayın.',
+          'Tavukların parlak bir sosla bütünleşmesi için <strong>kısık ateşte kapağı yarım aralık 3 dakika</strong> daha pişirip ocaktan alın ve sıcak servis edin.'
+        ],
+        tip: '<strong>👨‍🍳 Şefin Püf Noktası:</strong> Tavuğu ilk aşamada harlı ateşte tek kat mühürlemek suyunu içeride hapseder; sebzeleri ise sonradan ekleyerek hem vitaminini hem de diri dokusunu korursun.',
+        serve: '<strong>🍽️ Servis Önerisi:</strong> Sıcak lavaş içine dürüm yapabilir ya da yüksek proteinli öğün için haşlanmış basmati pirinç ve mevsim yeşillikleriyle tabaklayabilirsiniz.',
         chefReplies: [
-          'Sarımsağın yanmaması için tavuklarla birlikte değil, biberlerden 2 dakika sonra eklersen aroması daha taze kalır.',
-          'Yüksek proteinli öğün için yanına 4 yemek kaşığı şehriyeli bulgur pilavı veya kinoa salatası harika uyum sağlar.'
+          'Kapya biberin yoksa yalnızca yeşil biberle de yapabilirsin; renk ve hafif tatlılık için içine 1 tatlı kaşığı toz kırmızı biber eklemen harika olur.',
+          'Eğer tavukların içi hâlâ sert kaldıysa ocağı en kısığa alıp 2 yemek kaşığı su ekleyip kapağını 3 dakika kapatman lokum gibi yumuşamasını sağlar.',
+          'Sporcu/fit beslenme için sade basmati pilav veya közlenmiş patlıcan salatasıyla mükemmel uyum yakalar.'
         ]
       }
     ];
@@ -864,8 +939,12 @@
       document.getElementById('demoTitle').textContent = r.title;
       document.getElementById('demoTime').textContent = r.time;
       document.getElementById('demoMacros').innerHTML = r.macros.map(m => '<span>' + m + '</span>').join('');
+      document.getElementById('demoIngredientsList').innerHTML = r.ingredients.map(i => '<li>' + i + '</li>').join('');
+      document.getElementById('demoStepsList').innerHTML = r.steps.map((s, idx) =>
+        '<div class="demo-step-item"><div class="demo-step-num">' + (idx + 1) + '</div><div class="demo-step-text">' + s + '</div></div>'
+      ).join('');
       document.getElementById('demoTip').innerHTML = r.tip;
-      document.getElementById('demoStepsList').innerHTML = r.steps.map(s => '<li>' + s + '</li>').join('');
+      document.getElementById('demoServe').innerHTML = r.serve;
       updateWaveView();
       askDemoChef(activeChefQ);
     }
@@ -889,7 +968,7 @@
     function updateWaveView() {
       const r = DEMO_RECIPES[activeDemoIdx];
       document.getElementById('demoWaveCount').textContent = 'Adım ' + (activeWaveStep + 1) + ' / ' + r.steps.length;
-      document.getElementById('demoWaveText').textContent = r.steps[activeWaveStep];
+      document.getElementById('demoWaveText').innerHTML = r.steps[activeWaveStep];
     }
 
     function advanceDemoWave() {
@@ -902,6 +981,7 @@
       activeChefQ = qIdx;
       document.getElementById('demoQ0').classList.toggle('active', qIdx === 0);
       document.getElementById('demoQ1').classList.toggle('active', qIdx === 1);
+      document.getElementById('demoQ2').classList.toggle('active', qIdx === 2);
       document.getElementById('demoChefReply').textContent = DEMO_RECIPES[activeDemoIdx].chefReplies[qIdx];
     }
 

@@ -1168,9 +1168,16 @@ summary:focus-visible {
 
 .demo-grid {
   display: grid;
-  grid-template-columns: 0.95fr 1.05fr;
+  grid-template-columns: 0.88fr 1.12fr;
   gap: 36px;
-  align-items: center;
+  align-items: start;
+}
+
+@media (min-width: 961px) {
+  .demo-controls {
+    position: sticky;
+    top: 108px;
+  }
 }
 
 .demo-controls h3 {
@@ -1322,27 +1329,108 @@ summary:focus-visible {
   border-left: 3px solid var(--primary-mint);
   padding: 12px 14px;
   border-radius: 0 10px 10px 0;
-  font-size: 0.88rem;
-  color: #CBD5E1;
-  margin-bottom: 16px;
+  font-size: 0.87rem;
+  color: #E2E8F0;
+  line-height: 1.6;
+  margin-bottom: 14px;
 }
 
-.demo-steps-preview {
+.demo-serve-box {
+  background: rgba(255, 140, 55, 0.08);
+  border-left: 3px solid var(--accent-orange);
+  padding: 11px 14px;
+  border-radius: 0 10px 10px 0;
+  font-size: 0.86rem;
+  color: #E2E8F0;
+  line-height: 1.55;
+  margin-top: 14px;
+}
+
+.demo-subhead {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--primary-mint);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.demo-ingredients-box {
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid var(--border-color);
   border-radius: 14px;
   padding: 14px 16px;
+  margin-bottom: 14px;
 }
 
-.demo-steps-preview ol {
-  padding-left: 18px;
-  color: var(--text-muted);
-  font-size: 0.88rem;
-  line-height: 1.65;
+.demo-ingredients-grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 7px 14px;
 }
 
-.demo-steps-preview li {
-  margin-bottom: 6px;
+.demo-ingredients-grid li {
+  font-size: 0.83rem;
+  color: #CBD5E1;
+  line-height: 1.45;
+  padding-left: 14px;
+  position: relative;
+}
+
+.demo-ingredients-grid li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--primary-mint);
+  font-weight: 800;
+}
+
+@media (max-width: 600px) {
+  .demo-ingredients-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.demo-steps-preview {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.demo-step-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 12px 14px;
+}
+
+.demo-step-num {
+  width: 26px;
+  height: 26px;
+  border-radius: 8px;
+  background: rgba(0, 200, 151, 0.14);
+  border: 1px solid rgba(0, 200, 151, 0.35);
+  color: var(--primary-mint);
+  font-size: 0.8rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.demo-step-text {
+  font-size: 0.86rem;
+  color: #CBD5E1;
+  line-height: 1.6;
 }
 
 .demo-interactive-box {
